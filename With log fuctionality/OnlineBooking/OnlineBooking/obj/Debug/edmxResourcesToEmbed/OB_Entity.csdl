@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Online_Booking_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OB_entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Additional_ch_config" EntityType="Online_Booking_SystemModel.Additional_ch_config" />
+    <EntitySet Name="booking_schedule" EntityType="Online_Booking_SystemModel.booking_schedule" />
+    <EntitySet Name="booking_type" EntityType="Online_Booking_SystemModel.booking_type" />
+    <EntitySet Name="customers" EntityType="Online_Booking_SystemModel.customer" />
+    <EntitySet Name="customer_booking" EntityType="Online_Booking_SystemModel.customer_booking" />
+    <EntitySet Name="customer_booking_addl_ch" EntityType="Online_Booking_SystemModel.customer_booking_addl_ch" />
+    <EntitySet Name="directorates" EntityType="Online_Booking_SystemModel.directorate" />
+    <EntitySet Name="holidays" EntityType="Online_Booking_SystemModel.holiday" />
+    <EntitySet Name="policies" EntityType="Online_Booking_SystemModel.policy" />
+    <EntitySet Name="shifts" EntityType="Online_Booking_SystemModel.shift" />
+    <EntitySet Name="sysdiagrams" EntityType="Online_Booking_SystemModel.sysdiagram" />
+    <EntitySet Name="team_category" EntityType="Online_Booking_SystemModel.team_category" />
+    <EntitySet Name="users" EntityType="Online_Booking_SystemModel.user" />
+    <EntitySet Name="user_role" EntityType="Online_Booking_SystemModel.user_role" />
+    <EntitySet Name="vanues" EntityType="Online_Booking_SystemModel.vanue" />
+    <EntitySet Name="week_days" EntityType="Online_Booking_SystemModel.week_days" />
+    <AssociationSet Name="FK_Additional_ch_config_policy" Association="Online_Booking_SystemModel.FK_Additional_ch_config_policy">
+      <End Role="policy" EntitySet="policies" />
+      <End Role="Additional_ch_config" EntitySet="Additional_ch_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Additional_ch_config_vanue" Association="Online_Booking_SystemModel.FK_Additional_ch_config_vanue">
+      <End Role="vanue" EntitySet="vanues" />
+      <End Role="Additional_ch_config" EntitySet="Additional_ch_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_booking_addl_ch_Additional_ch_config" Association="Online_Booking_SystemModel.FK_customer_booking_addl_ch_Additional_ch_config">
+      <End Role="Additional_ch_config" EntitySet="Additional_ch_config" />
+      <End Role="customer_booking_addl_ch" EntitySet="customer_booking_addl_ch" />
+    </AssociationSet>
+    <AssociationSet Name="FK_booking_schedule_booking_type" Association="Online_Booking_SystemModel.FK_booking_schedule_booking_type">
+      <End Role="booking_type" EntitySet="booking_type" />
+      <End Role="booking_schedule" EntitySet="booking_schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_booking_schedule_policy" Association="Online_Booking_SystemModel.FK_booking_schedule_policy">
+      <End Role="policy" EntitySet="policies" />
+      <End Role="booking_schedule" EntitySet="booking_schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_booking_schedule_shift" Association="Online_Booking_SystemModel.FK_booking_schedule_shift">
+      <End Role="shift" EntitySet="shifts" />
+      <End Role="booking_schedule" EntitySet="booking_schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_booking_schedule_team_category" Association="Online_Booking_SystemModel.FK_booking_schedule_team_category">
+      <End Role="team_category" EntitySet="team_category" />
+      <End Role="booking_schedule" EntitySet="booking_schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_booking_schedule_week_days" Association="Online_Booking_SystemModel.FK_booking_schedule_week_days">
+      <End Role="week_days" EntitySet="week_days" />
+      <End Role="booking_schedule" EntitySet="booking_schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_booking_booking_schedule" Association="Online_Booking_SystemModel.FK_customer_booking_booking_schedule">
+      <End Role="booking_schedule" EntitySet="booking_schedule" />
+      <End Role="customer_booking" EntitySet="customer_booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_booking_type_vanue" Association="Online_Booking_SystemModel.FK_booking_type_vanue">
+      <End Role="vanue" EntitySet="vanues" />
+      <End Role="booking_type" EntitySet="booking_type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_booking_customer" Association="Online_Booking_SystemModel.FK_customer_booking_customer">
+      <End Role="customer" EntitySet="customers" />
+      <End Role="customer_booking" EntitySet="customer_booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_booking_addl_ch_customer_booking" Association="Online_Booking_SystemModel.FK_customer_booking_addl_ch_customer_booking">
+      <End Role="customer_booking" EntitySet="customer_booking" />
+      <End Role="customer_booking_addl_ch" EntitySet="customer_booking_addl_ch" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_booking_user" Association="Online_Booking_SystemModel.FK_customer_booking_user">
+      <End Role="user" EntitySet="users" />
+      <End Role="customer_booking" EntitySet="customer_booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_directorate" Association="Online_Booking_SystemModel.FK_user_directorate">
+      <End Role="directorate" EntitySet="directorates" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_user_role" Association="Online_Booking_SystemModel.FK_user_user_role">
+      <End Role="user_role" EntitySet="user_role" />
+      <End Role="user" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Additional_ch_config">
+    <Key>
+      <PropertyRef Name="additional_ch_id" />
+    </Key>
+    <Property Name="additional_ch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="charges_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="policy_id" Type="Int32" />
+    <Property Name="vanue_id" Type="Int32" />
+    <NavigationProperty Name="policy" Relationship="Online_Booking_SystemModel.FK_Additional_ch_config_policy" FromRole="Additional_ch_config" ToRole="policy" />
+    <NavigationProperty Name="vanue" Relationship="Online_Booking_SystemModel.FK_Additional_ch_config_vanue" FromRole="Additional_ch_config" ToRole="vanue" />
+    <NavigationProperty Name="customer_booking_addl_ch" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_Additional_ch_config" FromRole="Additional_ch_config" ToRole="customer_booking_addl_ch" />
+  </EntityType>
+  <EntityType Name="booking_schedule">
+    <Key>
+      <PropertyRef Name="schedule_id" />
+    </Key>
+    <Property Name="schedule_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="policy_id" Type="Int32" />
+    <Property Name="booking_type_id" Type="Int32" />
+    <Property Name="shift_id" Type="Int32" />
+    <Property Name="day_id" Type="Int32" />
+    <Property Name="charges_amount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="schedule_status" Type="Boolean" />
+    <Property Name="created_date" Type="DateTime" Precision="0" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="team_category_id" Type="Int32" />
+    <NavigationProperty Name="booking_type" Relationship="Online_Booking_SystemModel.FK_booking_schedule_booking_type" FromRole="booking_schedule" ToRole="booking_type" />
+    <NavigationProperty Name="policy" Relationship="Online_Booking_SystemModel.FK_booking_schedule_policy" FromRole="booking_schedule" ToRole="policy" />
+    <NavigationProperty Name="shift" Relationship="Online_Booking_SystemModel.FK_booking_schedule_shift" FromRole="booking_schedule" ToRole="shift" />
+    <NavigationProperty Name="team_category" Relationship="Online_Booking_SystemModel.FK_booking_schedule_team_category" FromRole="booking_schedule" ToRole="team_category" />
+    <NavigationProperty Name="week_days" Relationship="Online_Booking_SystemModel.FK_booking_schedule_week_days" FromRole="booking_schedule" ToRole="week_days" />
+    <NavigationProperty Name="customer_booking" Relationship="Online_Booking_SystemModel.FK_customer_booking_booking_schedule" FromRole="booking_schedule" ToRole="customer_booking" />
+  </EntityType>
+  <EntityType Name="booking_type">
+    <Key>
+      <PropertyRef Name="booking_type_id" />
+    </Key>
+    <Property Name="booking_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="booking_type1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="booking_type_status" Type="Boolean" />
+    <Property Name="vanue_id" Type="Int32" />
+    <NavigationProperty Name="booking_schedule" Relationship="Online_Booking_SystemModel.FK_booking_schedule_booking_type" FromRole="booking_type" ToRole="booking_schedule" />
+    <NavigationProperty Name="vanue" Relationship="Online_Booking_SystemModel.FK_booking_type_vanue" FromRole="booking_type" ToRole="vanue" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="customer_id" />
+    </Key>
+    <Property Name="customer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cnic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile_no" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="customer_booking" Relationship="Online_Booking_SystemModel.FK_customer_booking_customer" FromRole="customer" ToRole="customer_booking" />
+  </EntityType>
+  <EntityType Name="customer_booking">
+    <Key>
+      <PropertyRef Name="customer_booking_id" />
+    </Key>
+    <Property Name="customer_booking_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Booking_no" Type="Int32" Nullable="false" />
+    <Property Name="schedule_id" Type="Int32" Nullable="false" />
+    <Property Name="customer_id" Type="Int32" Nullable="false" />
+    <Property Name="is_paid" Type="Boolean" Nullable="false" />
+    <Property Name="is_reservation" Type="Boolean" Nullable="false" />
+    <Property Name="is_confirmed" Type="Boolean" Nullable="false" />
+    <Property Name="total_amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="booking_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="user_id" Type="Int32" Nullable="false" />
+    <Property Name="update_by_id" Type="Int32" />
+    <Property Name="update_date" Type="DateTime" Precision="0" />
+    <Property Name="transaction_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="booking_schedule" Relationship="Online_Booking_SystemModel.FK_customer_booking_booking_schedule" FromRole="customer_booking" ToRole="booking_schedule" />
+    <NavigationProperty Name="customer" Relationship="Online_Booking_SystemModel.FK_customer_booking_customer" FromRole="customer_booking" ToRole="customer" />
+    <NavigationProperty Name="customer_booking_addl_ch" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_customer_booking" FromRole="customer_booking" ToRole="customer_booking_addl_ch" />
+    <NavigationProperty Name="user" Relationship="Online_Booking_SystemModel.FK_customer_booking_user" FromRole="customer_booking" ToRole="user" />
+  </EntityType>
+  <EntityType Name="customer_booking_addl_ch">
+    <Key>
+      <PropertyRef Name="cus_booking_addl_ch_id" />
+    </Key>
+    <Property Name="cus_booking_addl_ch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customer_booking_id" Type="Int32" />
+    <Property Name="additional_ch_id" Type="Int32" />
+    <NavigationProperty Name="Additional_ch_config" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_Additional_ch_config" FromRole="customer_booking_addl_ch" ToRole="Additional_ch_config" />
+    <NavigationProperty Name="customer_booking" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_customer_booking" FromRole="customer_booking_addl_ch" ToRole="customer_booking" />
+  </EntityType>
+  <EntityType Name="directorate">
+    <Key>
+      <PropertyRef Name="dte_id" />
+    </Key>
+    <Property Name="dte_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dte_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dte_status" Type="Boolean" />
+    <NavigationProperty Name="users" Relationship="Online_Booking_SystemModel.FK_user_directorate" FromRole="directorate" ToRole="user" />
+  </EntityType>
+  <EntityType Name="holiday">
+    <Key>
+      <PropertyRef Name="holiday_id" />
+    </Key>
+    <Property Name="holiday_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="holiday_date" Type="DateTime" Precision="0" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="policy">
+    <Key>
+      <PropertyRef Name="policy_id" />
+    </Key>
+    <Property Name="policy_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="policy_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="policy_year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="policy_status" Type="Boolean" />
+    <NavigationProperty Name="Additional_ch_config" Relationship="Online_Booking_SystemModel.FK_Additional_ch_config_policy" FromRole="policy" ToRole="Additional_ch_config" />
+    <NavigationProperty Name="booking_schedule" Relationship="Online_Booking_SystemModel.FK_booking_schedule_policy" FromRole="policy" ToRole="booking_schedule" />
+  </EntityType>
+  <EntityType Name="shift">
+    <Key>
+      <PropertyRef Name="shift_id" />
+    </Key>
+    <Property Name="shift_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="shift_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shift_status" Type="Boolean" />
+    <Property Name="time_from" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="time_to" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="season" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="booking_schedule" Relationship="Online_Booking_SystemModel.FK_booking_schedule_shift" FromRole="shift" ToRole="booking_schedule" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="team_category">
+    <Key>
+      <PropertyRef Name="team_category_id" />
+    </Key>
+    <Property Name="team_category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="team_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="team_status" Type="Boolean" />
+    <NavigationProperty Name="booking_schedule" Relationship="Online_Booking_SystemModel.FK_booking_schedule_team_category" FromRole="team_category" ToRole="booking_schedule" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role_id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="record_status" Type="Boolean" />
+    <Property Name="dte_id" Type="Int32" />
+    <Property Name="created_date" Type="DateTime" Precision="0" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Emp_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DHA_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="customer_booking" Relationship="Online_Booking_SystemModel.FK_customer_booking_user" FromRole="user" ToRole="customer_booking" />
+    <NavigationProperty Name="directorate" Relationship="Online_Booking_SystemModel.FK_user_directorate" FromRole="user" ToRole="directorate" />
+    <NavigationProperty Name="user_role" Relationship="Online_Booking_SystemModel.FK_user_user_role" FromRole="user" ToRole="user_role" />
+  </EntityType>
+  <EntityType Name="user_role">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="record_status" Type="Boolean" />
+    <NavigationProperty Name="users" Relationship="Online_Booking_SystemModel.FK_user_user_role" FromRole="user_role" ToRole="user" />
+  </EntityType>
+  <EntityType Name="vanue">
+    <Key>
+      <PropertyRef Name="vanue_id" />
+    </Key>
+    <Property Name="vanue_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vanue_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vanue_status" Type="Boolean" />
+    <NavigationProperty Name="Additional_ch_config" Relationship="Online_Booking_SystemModel.FK_Additional_ch_config_vanue" FromRole="vanue" ToRole="Additional_ch_config" />
+    <NavigationProperty Name="booking_type" Relationship="Online_Booking_SystemModel.FK_booking_type_vanue" FromRole="vanue" ToRole="booking_type" />
+  </EntityType>
+  <EntityType Name="week_days">
+    <Key>
+      <PropertyRef Name="day_id" />
+    </Key>
+    <Property Name="day_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="day" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="day_status" Type="Boolean" />
+    <NavigationProperty Name="booking_schedule" Relationship="Online_Booking_SystemModel.FK_booking_schedule_week_days" FromRole="week_days" ToRole="booking_schedule" />
+  </EntityType>
+  <Association Name="FK_Additional_ch_config_policy">
+    <End Type="Online_Booking_SystemModel.policy" Role="policy" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.Additional_ch_config" Role="Additional_ch_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="policy">
+        <PropertyRef Name="policy_id" />
+      </Principal>
+      <Dependent Role="Additional_ch_config">
+        <PropertyRef Name="policy_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Additional_ch_config_vanue">
+    <End Type="Online_Booking_SystemModel.vanue" Role="vanue" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.Additional_ch_config" Role="Additional_ch_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vanue">
+        <PropertyRef Name="vanue_id" />
+      </Principal>
+      <Dependent Role="Additional_ch_config">
+        <PropertyRef Name="vanue_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_booking_addl_ch_Additional_ch_config">
+    <End Type="Online_Booking_SystemModel.Additional_ch_config" Role="Additional_ch_config" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.customer_booking_addl_ch" Role="customer_booking_addl_ch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Additional_ch_config">
+        <PropertyRef Name="additional_ch_id" />
+      </Principal>
+      <Dependent Role="customer_booking_addl_ch">
+        <PropertyRef Name="additional_ch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_booking_schedule_booking_type">
+    <End Type="Online_Booking_SystemModel.booking_type" Role="booking_type" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.booking_schedule" Role="booking_schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="booking_type">
+        <PropertyRef Name="booking_type_id" />
+      </Principal>
+      <Dependent Role="booking_schedule">
+        <PropertyRef Name="booking_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_booking_schedule_policy">
+    <End Type="Online_Booking_SystemModel.policy" Role="policy" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.booking_schedule" Role="booking_schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="policy">
+        <PropertyRef Name="policy_id" />
+      </Principal>
+      <Dependent Role="booking_schedule">
+        <PropertyRef Name="policy_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_booking_schedule_shift">
+    <End Type="Online_Booking_SystemModel.shift" Role="shift" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.booking_schedule" Role="booking_schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="shift">
+        <PropertyRef Name="shift_id" />
+      </Principal>
+      <Dependent Role="booking_schedule">
+        <PropertyRef Name="shift_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_booking_schedule_team_category">
+    <End Type="Online_Booking_SystemModel.team_category" Role="team_category" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.booking_schedule" Role="booking_schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team_category">
+        <PropertyRef Name="team_category_id" />
+      </Principal>
+      <Dependent Role="booking_schedule">
+        <PropertyRef Name="team_category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_booking_schedule_week_days">
+    <End Type="Online_Booking_SystemModel.week_days" Role="week_days" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.booking_schedule" Role="booking_schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="week_days">
+        <PropertyRef Name="day_id" />
+      </Principal>
+      <Dependent Role="booking_schedule">
+        <PropertyRef Name="day_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_booking_booking_schedule">
+    <End Type="Online_Booking_SystemModel.booking_schedule" Role="booking_schedule" Multiplicity="1" />
+    <End Type="Online_Booking_SystemModel.customer_booking" Role="customer_booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="booking_schedule">
+        <PropertyRef Name="schedule_id" />
+      </Principal>
+      <Dependent Role="customer_booking">
+        <PropertyRef Name="schedule_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_booking_type_vanue">
+    <End Type="Online_Booking_SystemModel.vanue" Role="vanue" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.booking_type" Role="booking_type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vanue">
+        <PropertyRef Name="vanue_id" />
+      </Principal>
+      <Dependent Role="booking_type">
+        <PropertyRef Name="vanue_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_booking_customer">
+    <End Type="Online_Booking_SystemModel.customer" Role="customer" Multiplicity="1" />
+    <End Type="Online_Booking_SystemModel.customer_booking" Role="customer_booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="customer_id" />
+      </Principal>
+      <Dependent Role="customer_booking">
+        <PropertyRef Name="customer_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_booking_addl_ch_customer_booking">
+    <End Type="Online_Booking_SystemModel.customer_booking" Role="customer_booking" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.customer_booking_addl_ch" Role="customer_booking_addl_ch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer_booking">
+        <PropertyRef Name="customer_booking_id" />
+      </Principal>
+      <Dependent Role="customer_booking_addl_ch">
+        <PropertyRef Name="customer_booking_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_booking_user">
+    <End Type="Online_Booking_SystemModel.user" Role="user" Multiplicity="1" />
+    <End Type="Online_Booking_SystemModel.customer_booking" Role="customer_booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="customer_booking">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_directorate">
+    <End Type="Online_Booking_SystemModel.directorate" Role="directorate" Multiplicity="0..1" />
+    <End Type="Online_Booking_SystemModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="directorate">
+        <PropertyRef Name="dte_id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="dte_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_user_role">
+    <End Type="Online_Booking_SystemModel.user_role" Role="user_role" Multiplicity="1" />
+    <End Type="Online_Booking_SystemModel.user" Role="user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_role">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="user">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

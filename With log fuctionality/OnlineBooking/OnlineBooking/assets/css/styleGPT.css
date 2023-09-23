@@ -1,0 +1,692 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+:root {
+    --font-primary: 'Open Sans', sans-serif;
+}
+
+/* Colors */
+:root {
+    --color-text: #ffffff;
+    --color-bg: #0b0c10;
+    --color-main: #ffa343;
+}
+.formContain{
+    background-color:rgba(50,50,50,0.8);
+    padding-top: 30px;
+    padding-bottom:80px;
+    padding-left:30px;
+    padding-right:30px;
+    height:auto;
+    border-radius:20px;
+
+
+}
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/FormBookingBg.jpg');
+    font-family: var(--font-primary);
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 16px;
+    /*//background-image: linear-gradient(to left, rgba(11, 12, 16, 0.6), rgba(11, 12, 16, 0.3)), url();*/
+    background-size: cover;
+    background-position: bottom center;
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(11, 12, 16, 0.527);
+    
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    
+}
+
+.logo {
+    font-size: 28px;
+    color: var(--color-text);
+    font-weight: 700;
+    display: inline-block;
+}
+
+.logo span {
+    color: var(--color-main);
+}
+
+.navbar {
+    display: flex;
+}
+
+
+.navbar a {
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--color-main);
+}
+
+
+
+.h-right {
+    display: flex;
+    align-items: center;
+}
+
+.h-right a {
+    font-size: 18px;
+    color: var(--color-text);
+    margin-right: 15px;
+    /* transition: color 0.5s ease; */
+    transition: all .6s ease;
+}
+
+.h-right a:hover {
+    color: var(--color-main);
+    transform: translateY(-4px);
+        
+}
+
+#menu-icon {
+    font-size: 26px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Home Section */
+.home {
+    /* background-image: linear-gradient(to left, rgba(11, 12, 16, 0.6), rgba(11, 12, 16, 0.3)), url(../img/background.jpg);
+    background-size: cover;
+    background-position: bottom center; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.home-text h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--color-main);
+}
+
+.home-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.home-text p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 35px;
+}
+
+.btn {
+    float:right;
+    display: inline-block;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: snow;
+    font-size: 18px;
+    margin-top:10px;
+    margin-bottom:25px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btngrd{
+    justify-content:center;
+    padding: 5px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: snow;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.selected-row {
+    background-color:lightblue ;
+
+}
+.Clndar{
+    padding: 10px;
+    border-radius: 20px;    
+    width:100%;
+    font-weight:600;
+    border-radius:10px;
+}
+
+ .ddType {
+    display: inline-block;
+    padding: 15px 30px;
+    /*background-color: #43392f;
+    color: #f38209;*/
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    border-radius: 4px;
+    margin-top: 3%;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 5%;
+    text-align: left;
+} 
+.ddType button{
+    margin-top: 15px;
+    margin-left: 40%;
+}
+
+
+.ddType select,
+.ddType input[type="date"] {
+    /*background-color: #43392f;
+    color: var(--color-text);*/
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    width: 100%;
+}
+
+.ddType select::after,
+.ddType input[type="date"]::-webkit-calendar-picker-indicator {
+    content: '\25BC'; /* Unicode arrow-down character */ 
+    /*color: var(--color-text);*/
+    font-size: 18px;
+    padding: 0 10px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.ddType select option {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+     background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+ /* Adding a box to the select and date input  */
+.ddType select,
+.ddType input[type="date"] {
+    color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(104, 68, 29, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+} 
+
+
+
+/* ddType End */
+
+.btn:hover {
+    background-color: white;
+    color: black;
+    transform: translateY(-3px);
+}
+
+/* Booking Section */
+.booking {
+    background-image: url(../img/5.png);
+    background-size: cover;
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(70, 6, 6, 0.9);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-table {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.dropdown select,
+.dropdown input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#search-button {
+    background-color: var(--color-main);
+    color: var(--color-bg);
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#search-button:hover {
+    background-color: var(--color-bg);
+    color: var(--color-main);
+}
+
+#timeslots {
+
+    margin-top: 50px;
+    margin-bottom: 15%;
+}
+
+#timeslots table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+#timeslots th,
+#timeslots td {
+    
+    padding: 0;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+ #customer-form {
+    margin-top: 5px;
+    text-align:left;
+}
+
+#customer-form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#customer-form input[type="text"],
+#customer-form textarea {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+} 
+
+
+/* Customer form */
+#customer-form table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* GPT CSS FOR CUSTOMER FORM  */
+
+
+
+#customer-form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#customer-form input[type="text"],
+#customer-form input[type="number"],
+#customer-form input[type="tel"],
+#customer-form textarea {
+    width: 100%;
+    color:white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#customer-form button {
+    padding: 10px 20px;
+    background-color: var(--color-main);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+#customer-form label{
+    text-align: left;
+}
+
+#customer-form button:hover {
+    background-color: var(--color-bg);
+}
+
+ #button-container button{
+    text-align: center;
+
+}
+
+
+ BookNow buttons style 
+#confirm-booking #confirm-booking2 #confirm-booking3 {
+    background-color: var(--color-main);
+    color: var(--color-bg);
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#submit-button {
+    background-color: var(--color-main);
+    color: var(--color-bg);
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#customer-form table {
+    margin-top: 0px;
+    width: 50%;
+    margin: 20px auto;
+    padding: 75px;
+    border-radius: 10px;
+    background: rgba(53, 51, 51, 0.274);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Padding to the table 
+#customer-form table label{
+    padding-right: 10%;
+    /* background-color: #ffa343; */
+}
+
+#customer-form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+#customer-form input[type="text"],
+#customer-form input[type="number"],
+#customer-form input[type="tel"],
+#customer-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#customer-form button {
+    padding: 10px 20px;
+    background-color: var(--color-main);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#customer-form button:hover {
+    background-color: var(--color-bg);
+}
+
+#button-container {
+    text-align: center;
+}
+
+#submit-button:hover {
+    background-color: var(--color-bg);
+    color: var(--color-main);
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    header {
+        padding: 15px 7%;
+    }
+
+    .home-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .home-text p {
+        font-size: 16px;
+    }
+}
+
+/*this is modal code*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+}
+
+/* Close button styles */
+.close {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+    .home {
+        padding: 80px 0;
+    }
+
+    .home-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .navbar {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .home-text h1 {
+        font-size: 2rem;
+    }
+
+    .home-text p {
+        font-size: 15px;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 20px;
+    }
+}
+.hidden {
+    display: none;
+}
+
+/* customer form responsiveness */
+@media screen and (max-width: 768px) {
+    #customer-form {
+        width: 100%;
+    }
+}
+
+
+   /* Footer */
+footer {
+    background-color: rgba(11, 12, 16, 0.582);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    width: 25%; /* Adjust the logo width as needed */
+    height: auto;
+    
+}
+
+.footer-text {
+    flex: 1;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .footer-logo img {
+        width: 80px; /* Adjust the logo width for smaller screens */
+    }
+}
+
+/* Responsive navbar  */
+
+/* Responsive Navbar */
+@media screen and (max-width: 992px) {
+    .navbar {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+        background-color: var(--color-bg);
+        height: 100vh;
+        flex-direction: column;
+        padding-top: 80px;
+        text-align: center;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .navbar.active {
+        transform: translateX(0);
+        margin-top: 10%;
+        display: block;
+        background-color: #333130dc;
+    }
+
+    .navbar a {
+        margin: 15px 0;
+        font-size: 20px;
+    }
+
+    .h-right {
+        display: block;
+    }
+
+    .h-right a {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    #menu-icon:hover {
+        color: var(--color-main);
+    }
+
+    header {
+        padding: 15px 7%;
+    }
+}
+
+/* Form Error */
+.formError{
+    color:  red;
+}
