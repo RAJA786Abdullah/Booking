@@ -28,7 +28,7 @@ namespace OnlineBooking.pages
                             on booking.customer_id equals customer.customer_id
                             where booking.customer_booking_id == id
                             select new
-                            {
+                            {   booking.voucher_no,
                                 booking.Booking_no,
                                 booking.total_amount,
                                 customer.mobile_no,

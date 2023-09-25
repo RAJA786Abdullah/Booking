@@ -1924,6 +1924,8 @@ namespace OnlineBooking {
             
             private global::System.Data.DataColumn columncustomer_booking_id;
             
+            private global::System.Data.DataColumn columnvoucher_no;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public voucher_dataDataTable() {
@@ -2015,6 +2017,14 @@ namespace OnlineBooking {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn voucher_noColumn {
+                get {
+                    return this.columnvoucher_no;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2050,7 +2060,7 @@ namespace OnlineBooking {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public voucher_dataRow Addvoucher_dataRow(int Booking_no, decimal total_amount, string mobile_no, string cnic, string name, System.DateTime created_date) {
+            public voucher_dataRow Addvoucher_dataRow(int Booking_no, decimal total_amount, string mobile_no, string cnic, string name, System.DateTime created_date, string voucher_no) {
                 voucher_dataRow rowvoucher_dataRow = ((voucher_dataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Booking_no,
@@ -2059,7 +2069,8 @@ namespace OnlineBooking {
                         cnic,
                         name,
                         created_date,
-                        null};
+                        null,
+                        voucher_no};
                 rowvoucher_dataRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowvoucher_dataRow);
                 return rowvoucher_dataRow;
@@ -2096,6 +2107,7 @@ namespace OnlineBooking {
                 this.columnname = base.Columns["name"];
                 this.columncreated_date = base.Columns["created_date"];
                 this.columncustomer_booking_id = base.Columns["customer_booking_id"];
+                this.columnvoucher_no = base.Columns["voucher_no"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2115,6 +2127,8 @@ namespace OnlineBooking {
                 base.Columns.Add(this.columncreated_date);
                 this.columncustomer_booking_id = new global::System.Data.DataColumn("customer_booking_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncustomer_booking_id);
+                this.columnvoucher_no = new global::System.Data.DataColumn("voucher_no", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvoucher_no);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncustomer_booking_id}, true));
                 this.columnBooking_no.AllowDBNull = false;
@@ -2132,6 +2146,7 @@ namespace OnlineBooking {
                 this.columncustomer_booking_id.AllowDBNull = false;
                 this.columncustomer_booking_id.ReadOnly = true;
                 this.columncustomer_booking_id.Unique = true;
+                this.columnvoucher_no.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7633,6 +7648,34 @@ namespace OnlineBooking {
                     this[this.tablevoucher_data.customer_booking_idColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string voucher_no {
+                get {
+                    try {
+                        return ((string)(this[this.tablevoucher_data.voucher_noColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'voucher_no\' in table \'voucher_data\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablevoucher_data.voucher_noColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isvoucher_noNull() {
+                return this.IsNull(this.tablevoucher_data.voucher_noColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setvoucher_noNull() {
+                this[this.tablevoucher_data.voucher_noColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -11702,6 +11745,7 @@ WHERE        (booking_schedule.day_id = @day) AND (time_slot.vanue_id = @vanue) 
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("created_date", "created_date");
             tableMapping.ColumnMappings.Add("customer_booking_id", "customer_booking_id");
+            tableMapping.ColumnMappings.Add("voucher_no", "voucher_no");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11718,7 +11762,8 @@ WHERE        (booking_schedule.day_id = @day) AND (time_slot.vanue_id = @vanue) 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        customer_booking.Booking_no, customer_booking.total_amount, customer.mobile_no, customer.cnic, customer.name, customer_booking.created_date, customer_booking.customer_booking_id
+            this._commandCollection[0].CommandText = @"SELECT        customer_booking.Booking_no, customer_booking.total_amount, customer.mobile_no, customer.cnic, customer.name, customer_booking.created_date, customer_booking.customer_booking_id, 
+                         customer_booking.voucher_no
 FROM            customer_booking INNER JOIN
                          customer ON customer_booking.customer_id = customer.customer_id
 WHERE        (customer_booking.customer_booking_id = @id)";

@@ -12,7 +12,6 @@
     <EntitySet Name="holidays" EntityType="Online_Booking_SystemModel.holiday" />
     <EntitySet Name="policies" EntityType="Online_Booking_SystemModel.policy" />
     <EntitySet Name="shifts" EntityType="Online_Booking_SystemModel.shift" />
-    <EntitySet Name="sysdiagrams" EntityType="Online_Booking_SystemModel.sysdiagram" />
     <EntitySet Name="team_category" EntityType="Online_Booking_SystemModel.team_category" />
     <EntitySet Name="users" EntityType="Online_Booking_SystemModel.user" />
     <EntitySet Name="user_role" EntityType="Online_Booking_SystemModel.user_role" />
@@ -151,6 +150,7 @@
     </Key>
     <Property Name="customer_booking_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Booking_no" Type="Int32" Nullable="false" />
+    <Property Name="voucher_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="schedule_id" Type="Int32" Nullable="false" />
     <Property Name="customer_id" Type="Int32" Nullable="false" />
     <Property Name="is_paid" Type="Boolean" Nullable="false" />
@@ -219,16 +219,6 @@
     <Property Name="time_to" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="season" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="booking_schedule" Relationship="Online_Booking_SystemModel.FK_booking_schedule_shift" FromRole="shift" ToRole="booking_schedule" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="team_category">
     <Key>

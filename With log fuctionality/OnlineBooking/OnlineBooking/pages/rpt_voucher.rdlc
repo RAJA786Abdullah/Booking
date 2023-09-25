@@ -654,7 +654,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Sum(Fields!Booking_no.Value, "DataSet1")</Value>
+                <Value>=First(Fields!voucher_no.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -885,7 +885,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Sum(Fields!Booking_no.Value, "DataSet1")</Value>
+                <Value>=First(Fields!voucher_no.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1116,7 +1116,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Sum(Fields!Booking_no.Value, "DataSet1")</Value>
+                <Value>=First(Fields!voucher_no.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1347,7 +1347,7 @@
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Sum(Fields!Booking_no.Value, "DataSet1")</Value>
+                <Value>=First(Fields!voucher_no.Value, "DataSet1")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -7030,10 +7030,14 @@
           <DataField>customer_booking_id</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="voucher_no">
+          <DataField>voucher_no</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>Bind_Data_DS</rd:DataSetName>
-        <rd:SchemaPath>D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\Bind_Data_DS.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\M.S.I\Documents\GitHub\Booking\With log fuctionality\OnlineBooking\OnlineBooking\Bind_Data_DS.xsd</rd:SchemaPath>
         <rd:TableName>voucher_data</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
