@@ -19,7 +19,7 @@ namespace OnlineBooking.pages
                 Response.Redirect("../Login.aspx");
             }
         }
-        //Page load method end here
+      
 
         //Searh button method start here
         protected void btn_sserch_Click(object sender, EventArgs e)
