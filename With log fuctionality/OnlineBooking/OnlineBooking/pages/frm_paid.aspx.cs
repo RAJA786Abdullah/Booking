@@ -21,7 +21,7 @@ namespace OnlineBooking.pages
         }
       
 
-        //Searh button method start here
+    
         protected void btn_sserch_Click(object sender, EventArgs e)
         {
             try

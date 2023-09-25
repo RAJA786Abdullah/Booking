@@ -9,6 +9,7 @@ namespace OnlineBooking.pages
 {
     public partial class ConfirmBooking : System.Web.UI.Page
     {
+        // load
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["User_ID"] == null)
