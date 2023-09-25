@@ -1,5 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Online_Booking_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Additional_ch_config">
+    <Key>
+      <PropertyRef Name="additional_ch_id" />
+    </Key>
+    <Property Name="additional_ch_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="charges_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="policy_id" Type="int" />
+    <Property Name="vanue_id" Type="int" />
+  </EntityType>
+  <EntityType Name="bank">
+    <Key>
+      <PropertyRef Name="bank_id" />
+    </Key>
+    <Property Name="bank_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bank_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
   <EntityType Name="booking_schedule">
     <Key>
       <PropertyRef Name="schedule_id" />
@@ -9,10 +29,11 @@
     <Property Name="booking_type_id" Type="int" />
     <Property Name="shift_id" Type="int" />
     <Property Name="day_id" Type="int" />
-    <Property Name="charges_amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="charges_amount" Type="decimal" Precision="18" Scale="0" />
     <Property Name="schedule_status" Type="bit" />
     <Property Name="created_date" Type="date" />
     <Property Name="user_id" Type="int" />
+    <Property Name="team_category_id" Type="int" />
   </EntityType>
   <EntityType Name="booking_type">
     <Key>
@@ -40,13 +61,26 @@
     <Property Name="customer_booking_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Booking_no" Type="int" Nullable="false" />
     <Property Name="schedule_id" Type="int" Nullable="false" />
-    <Property Name="time_slot_id" Type="int" Nullable="false" />
     <Property Name="customer_id" Type="int" Nullable="false" />
     <Property Name="is_paid" Type="bit" Nullable="false" />
     <Property Name="is_reservation" Type="bit" Nullable="false" />
     <Property Name="is_confirmed" Type="bit" Nullable="false" />
     <Property Name="total_amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="booking_date" Type="date" Nullable="false" />
     <Property Name="created_date" Type="date" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="update_by_id" Type="int" />
+    <Property Name="update_date" Type="date" />
+    <Property Name="transaction_date" Type="date" />
+  </EntityType>
+  <EntityType Name="customer_booking_addl_ch">
+    <Key>
+      <PropertyRef Name="cus_booking_addl_ch_id" />
+    </Key>
+    <Property Name="cus_booking_addl_ch_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_booking_id" Type="int" />
+    <Property Name="additional_ch_id" Type="int" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="directorate">
     <Key>
@@ -56,13 +90,22 @@
     <Property Name="dte_name" Type="nvarchar" MaxLength="50" />
     <Property Name="dte_status" Type="bit" />
   </EntityType>
+  <EntityType Name="holiday">
+    <Key>
+      <PropertyRef Name="holiday_id" />
+    </Key>
+    <Property Name="holiday_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" />
+    <Property Name="holiday_date" Type="date" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
   <EntityType Name="policy">
     <Key>
       <PropertyRef Name="policy_id" />
     </Key>
     <Property Name="policy_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="policy_title" Type="varchar" MaxLength="50" />
-    <Property Name="policy_year" Type="date" />
+    <Property Name="policy_year" Type="varchar" MaxLength="50" />
     <Property Name="policy_status" Type="bit" />
   </EntityType>
   <EntityType Name="shift">
@@ -72,6 +115,9 @@
     <Property Name="shift_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="shift_title" Type="varchar" MaxLength="50" />
     <Property Name="shift_status" Type="bit" />
+    <Property Name="time_from" Type="nvarchar" MaxLength="50" />
+    <Property Name="time_to" Type="nvarchar" MaxLength="50" />
+    <Property Name="season" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -83,19 +129,13 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <EntityType Name="time_slot">
+  <EntityType Name="team_category">
     <Key>
-      <PropertyRef Name="time_slot_id" />
+      <PropertyRef Name="team_category_id" />
     </Key>
-    <Property Name="time_slot_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="time_from" Type="nvarchar" MaxLength="50" />
-    <Property Name="time_to" Type="nvarchar" MaxLength="50" />
-    <Property Name="time_slot_status" Type="bit" />
-    <Property Name="day_id" Type="int" />
-    <Property Name="shift_id" Type="int" />
-    <Property Name="vanue_id" Type="int" />
-    <Property Name="created_date" Type="date" />
-    <Property Name="user_id" Type="int" />
+    <Property Name="team_category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="team_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="team_status" Type="bit" />
   </EntityType>
   <EntityType Name="user">
     <Key>
@@ -109,7 +149,7 @@
     <Property Name="dte_id" Type="int" />
     <Property Name="created_date" Type="date" />
     <Property Name="email" Type="nvarchar" MaxLength="50" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Emp_Name" Type="nvarchar" MaxLength="50" />
     <Property Name="DHA_No" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="user_role">
@@ -136,6 +176,30 @@
     <Property Name="day" Type="varchar" MaxLength="20" />
     <Property Name="day_status" Type="bit" />
   </EntityType>
+  <Association Name="FK_Additional_ch_config_policy">
+    <End Role="policy" Type="Self.policy" Multiplicity="0..1" />
+    <End Role="Additional_ch_config" Type="Self.Additional_ch_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="policy">
+        <PropertyRef Name="policy_id" />
+      </Principal>
+      <Dependent Role="Additional_ch_config">
+        <PropertyRef Name="policy_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Additional_ch_config_vanue">
+    <End Role="vanue" Type="Self.vanue" Multiplicity="0..1" />
+    <End Role="Additional_ch_config" Type="Self.Additional_ch_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vanue">
+        <PropertyRef Name="vanue_id" />
+      </Principal>
+      <Dependent Role="Additional_ch_config">
+        <PropertyRef Name="vanue_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_booking_schedule_booking_type">
     <End Role="booking_type" Type="Self.booking_type" Multiplicity="0..1" />
     <End Role="booking_schedule" Type="Self.booking_schedule" Multiplicity="*" />
@@ -172,6 +236,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_booking_schedule_team_category">
+    <End Role="team_category" Type="Self.team_category" Multiplicity="0..1" />
+    <End Role="booking_schedule" Type="Self.booking_schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="team_category">
+        <PropertyRef Name="team_category_id" />
+      </Principal>
+      <Dependent Role="booking_schedule">
+        <PropertyRef Name="team_category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_booking_schedule_week_days">
     <End Role="week_days" Type="Self.week_days" Multiplicity="0..1" />
     <End Role="booking_schedule" Type="Self.booking_schedule" Multiplicity="*" />
@@ -193,6 +269,30 @@
       </Principal>
       <Dependent Role="booking_type">
         <PropertyRef Name="vanue_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_booking_addl_ch_Additional_ch_config">
+    <End Role="Additional_ch_config" Type="Self.Additional_ch_config" Multiplicity="0..1" />
+    <End Role="customer_booking_addl_ch" Type="Self.customer_booking_addl_ch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Additional_ch_config">
+        <PropertyRef Name="additional_ch_id" />
+      </Principal>
+      <Dependent Role="customer_booking_addl_ch">
+        <PropertyRef Name="additional_ch_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customer_booking_addl_ch_customer_booking">
+    <End Role="customer_booking" Type="Self.customer_booking" Multiplicity="0..1" />
+    <End Role="customer_booking_addl_ch" Type="Self.customer_booking_addl_ch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer_booking">
+        <PropertyRef Name="customer_booking_id" />
+      </Principal>
+      <Dependent Role="customer_booking_addl_ch">
+        <PropertyRef Name="customer_booking_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -220,51 +320,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_customer_booking_time_slot">
-    <End Role="time_slot" Type="Self.time_slot" Multiplicity="1" />
+  <Association Name="FK_customer_booking_user">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
     <End Role="customer_booking" Type="Self.customer_booking" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="time_slot">
-        <PropertyRef Name="time_slot_id" />
+      <Principal Role="user">
+        <PropertyRef Name="user_id" />
       </Principal>
       <Dependent Role="customer_booking">
-        <PropertyRef Name="time_slot_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_time_slot_shift">
-    <End Role="shift" Type="Self.shift" Multiplicity="0..1" />
-    <End Role="time_slot" Type="Self.time_slot" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="shift">
-        <PropertyRef Name="shift_id" />
-      </Principal>
-      <Dependent Role="time_slot">
-        <PropertyRef Name="shift_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_time_slot_vanue">
-    <End Role="vanue" Type="Self.vanue" Multiplicity="0..1" />
-    <End Role="time_slot" Type="Self.time_slot" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="vanue">
-        <PropertyRef Name="vanue_id" />
-      </Principal>
-      <Dependent Role="time_slot">
-        <PropertyRef Name="vanue_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_time_slot_week_days">
-    <End Role="week_days" Type="Self.week_days" Multiplicity="0..1" />
-    <End Role="time_slot" Type="Self.time_slot" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="week_days">
-        <PropertyRef Name="day_id" />
-      </Principal>
-      <Dependent Role="time_slot">
-        <PropertyRef Name="day_id" />
+        <PropertyRef Name="user_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -293,19 +357,31 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Online_Booking_SystemModelStoreContainer">
+    <EntitySet Name="Additional_ch_config" EntityType="Self.Additional_ch_config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bank" EntityType="Self.bank" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="booking_schedule" EntityType="Self.booking_schedule" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="booking_type" EntityType="Self.booking_type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="customer_booking" EntityType="Self.customer_booking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer_booking_addl_ch" EntityType="Self.customer_booking_addl_ch" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="directorate" EntityType="Self.directorate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="holiday" EntityType="Self.holiday" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="policy" EntityType="Self.policy" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="shift" EntityType="Self.shift" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="time_slot" EntityType="Self.time_slot" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="team_category" EntityType="Self.team_category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user_role" EntityType="Self.user_role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vanue" EntityType="Self.vanue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="week_days" EntityType="Self.week_days" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Additional_ch_config_policy" Association="Self.FK_Additional_ch_config_policy">
+      <End Role="policy" EntitySet="policy" />
+      <End Role="Additional_ch_config" EntitySet="Additional_ch_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Additional_ch_config_vanue" Association="Self.FK_Additional_ch_config_vanue">
+      <End Role="vanue" EntitySet="vanue" />
+      <End Role="Additional_ch_config" EntitySet="Additional_ch_config" />
+    </AssociationSet>
     <AssociationSet Name="FK_booking_schedule_booking_type" Association="Self.FK_booking_schedule_booking_type">
       <End Role="booking_type" EntitySet="booking_type" />
       <End Role="booking_schedule" EntitySet="booking_schedule" />
@@ -318,6 +394,10 @@
       <End Role="shift" EntitySet="shift" />
       <End Role="booking_schedule" EntitySet="booking_schedule" />
     </AssociationSet>
+    <AssociationSet Name="FK_booking_schedule_team_category" Association="Self.FK_booking_schedule_team_category">
+      <End Role="team_category" EntitySet="team_category" />
+      <End Role="booking_schedule" EntitySet="booking_schedule" />
+    </AssociationSet>
     <AssociationSet Name="FK_booking_schedule_week_days" Association="Self.FK_booking_schedule_week_days">
       <End Role="week_days" EntitySet="week_days" />
       <End Role="booking_schedule" EntitySet="booking_schedule" />
@@ -325,6 +405,14 @@
     <AssociationSet Name="FK_booking_type_vanue" Association="Self.FK_booking_type_vanue">
       <End Role="vanue" EntitySet="vanue" />
       <End Role="booking_type" EntitySet="booking_type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_booking_addl_ch_Additional_ch_config" Association="Self.FK_customer_booking_addl_ch_Additional_ch_config">
+      <End Role="Additional_ch_config" EntitySet="Additional_ch_config" />
+      <End Role="customer_booking_addl_ch" EntitySet="customer_booking_addl_ch" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customer_booking_addl_ch_customer_booking" Association="Self.FK_customer_booking_addl_ch_customer_booking">
+      <End Role="customer_booking" EntitySet="customer_booking" />
+      <End Role="customer_booking_addl_ch" EntitySet="customer_booking_addl_ch" />
     </AssociationSet>
     <AssociationSet Name="FK_customer_booking_booking_schedule" Association="Self.FK_customer_booking_booking_schedule">
       <End Role="booking_schedule" EntitySet="booking_schedule" />
@@ -334,21 +422,9 @@
       <End Role="customer" EntitySet="customer" />
       <End Role="customer_booking" EntitySet="customer_booking" />
     </AssociationSet>
-    <AssociationSet Name="FK_customer_booking_time_slot" Association="Self.FK_customer_booking_time_slot">
-      <End Role="time_slot" EntitySet="time_slot" />
+    <AssociationSet Name="FK_customer_booking_user" Association="Self.FK_customer_booking_user">
+      <End Role="user" EntitySet="user" />
       <End Role="customer_booking" EntitySet="customer_booking" />
-    </AssociationSet>
-    <AssociationSet Name="FK_time_slot_shift" Association="Self.FK_time_slot_shift">
-      <End Role="shift" EntitySet="shift" />
-      <End Role="time_slot" EntitySet="time_slot" />
-    </AssociationSet>
-    <AssociationSet Name="FK_time_slot_vanue" Association="Self.FK_time_slot_vanue">
-      <End Role="vanue" EntitySet="vanue" />
-      <End Role="time_slot" EntitySet="time_slot" />
-    </AssociationSet>
-    <AssociationSet Name="FK_time_slot_week_days" Association="Self.FK_time_slot_week_days">
-      <End Role="week_days" EntitySet="week_days" />
-      <End Role="time_slot" EntitySet="time_slot" />
     </AssociationSet>
     <AssociationSet Name="FK_user_directorate" Association="Self.FK_user_directorate">
       <End Role="directorate" EntitySet="directorate" />

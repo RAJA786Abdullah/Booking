@@ -26,6 +26,7 @@ namespace OnlineBooking
         }
     
         public virtual DbSet<Additional_ch_config> Additional_ch_config { get; set; }
+        public virtual DbSet<bank> banks { get; set; }
         public virtual DbSet<booking_schedule> booking_schedule { get; set; }
         public virtual DbSet<booking_type> booking_type { get; set; }
         public virtual DbSet<customer> customers { get; set; }

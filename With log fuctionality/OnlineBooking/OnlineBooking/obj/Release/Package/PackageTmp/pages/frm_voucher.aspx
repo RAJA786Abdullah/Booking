@@ -13,20 +13,35 @@
 <body>
     <form id="form1" runat="server">
     <div>
+
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <rsweb:ReportViewer runat="server" ID="rpt_voucher" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1198px" Height="976px">
+        <rsweb:ReportViewer Visible="False" runat="server" ID="rpt_voucher" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1300px" AsyncRendering="False" Height="976px">
             <localreport reportpath="pages\rpt_voucher.rdlc">
                 <datasources>
                     <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource2" Name="DataSet2" />
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource3" Name="DataSet3" />
+
                 </datasources>
             </localreport>
         </rsweb:ReportViewer>
+        <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="OnlineBooking.Bind_Data_DSTableAdapters.bankTableAdapter" UpdateMethod="Update">
+         
+        </asp:ObjectDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="OnlineBooking.Bind_Data_DSTableAdapters.CustomerAdditional_chTableAdapter">
+            <SelectParameters>
+                <asp:SessionParameter DefaultValue="0" Name="id" SessionField="CBID" Type="Int32" />
+            </SelectParameters>
+        </asp:ObjectDataSource>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" TypeName="OnlineBooking.Bind_Data_DSTableAdapters.voucher_dataTableAdapter">
             <SelectParameters>
                 <asp:SessionParameter DefaultValue="0" Name="id" SessionField="CBID" Type="Int32" />
             </SelectParameters>
         </asp:ObjectDataSource>              
         <br />
+
+        
+
     </div>
     </form>
 </body>

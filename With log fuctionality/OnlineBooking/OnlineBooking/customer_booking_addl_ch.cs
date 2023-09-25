@@ -17,6 +17,7 @@ namespace OnlineBooking
         public int cus_booking_addl_ch_id { get; set; }
         public Nullable<int> customer_booking_id { get; set; }
         public Nullable<int> additional_ch_id { get; set; }
+        public Nullable<decimal> amount { get; set; }
     
         public virtual Additional_ch_config Additional_ch_config { get; set; }
         public virtual customer_booking customer_booking { get; set; }

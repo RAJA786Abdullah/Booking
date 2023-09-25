@@ -79,3 +79,95 @@ E:\DHA Project\updated online booking\OnlineBooking\OnlineBooking\obj\Release\Rd
 E:\DHA Project\updated online booking\OnlineBooking\OnlineBooking\obj\Release\RdlCompile.compiled
 E:\DHA Project\updated online booking\OnlineBooking\OnlineBooking\obj\Release\OnlineBooking.dll
 E:\DHA Project\updated online booking\OnlineBooking\OnlineBooking\obj\Release\OnlineBooking.pdb
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\csc.exe
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\System.Collections.Immutable.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\System.Reflection.Metadata.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\vbc.exe
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\VBCSCompiler.exe
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\VBCSCompiler.exe.config
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\OnlineBooking.dll.config
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\OnlineBooking.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\OnlineBooking.pdb
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\AjaxControlToolkit.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\BCrypt.Net-Next.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\EntityFramework.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\EntityFramework.SqlServer.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.ReportViewer.Common.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.ReportViewer.WebForms.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Serilog.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.SqlServer.Types.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\BCrypt.Net-Next.xml
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\EntityFramework.xml
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\EntityFramework.SqlServer.xml
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Serilog.xml
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\de\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\es\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\fr\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\it\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\ja\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\ko\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\pt\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\ru\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\OnlineBooking.csprojResolveAssemblyReference.cache
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\RdlCompile.cache
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\RdlCompile.compiled
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\OnlineBooking.dll
+D:\projects\Booking\updated 23-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\OnlineBooking.pdb
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\csc.exe
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\System.Collections.Immutable.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\System.Reflection.Metadata.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\vbc.exe
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\VBCSCompiler.exe
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\roslyn\VBCSCompiler.exe.config
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\OnlineBooking.dll.config
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\OnlineBooking.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\OnlineBooking.pdb
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\AjaxControlToolkit.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\BCrypt.Net-Next.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\EntityFramework.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\EntityFramework.SqlServer.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.ReportViewer.Common.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.ReportViewer.DataVisualization.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.ReportViewer.WebForms.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Serilog.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.SqlServer.Types.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\BCrypt.Net-Next.xml
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\EntityFramework.xml
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\EntityFramework.SqlServer.xml
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\Serilog.xml
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\de\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\es\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\fr\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\it\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\ja\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\ko\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\pt\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\ru\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\OnlineBooking.csprojResolveAssemblyReference.cache
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\RdlCompile.cache
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\RdlCompile.compiled
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\OnlineBooking.dll
+E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\OnlineBooking.pdb

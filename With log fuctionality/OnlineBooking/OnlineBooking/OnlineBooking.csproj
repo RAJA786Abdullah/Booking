@@ -1161,6 +1161,9 @@
     <Compile Include="Additional_ch_config.cs">
       <DependentUpon>OB_Entity.tt</DependentUpon>
     </Compile>
+    <Compile Include="bank.cs">
+      <DependentUpon>OB_Entity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bind_Data_DS.cs">
       <DependentUpon>Bind_Data_DS.xsd</DependentUpon>
     </Compile>

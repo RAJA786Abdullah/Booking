@@ -2,6 +2,7 @@
 <Schema Namespace="Online_Booking_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="OB_entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Additional_ch_config" EntityType="Online_Booking_SystemModel.Additional_ch_config" />
+    <EntitySet Name="banks" EntityType="Online_Booking_SystemModel.bank" />
     <EntitySet Name="booking_schedule" EntityType="Online_Booking_SystemModel.booking_schedule" />
     <EntitySet Name="booking_type" EntityType="Online_Booking_SystemModel.booking_type" />
     <EntitySet Name="customers" EntityType="Online_Booking_SystemModel.customer" />
@@ -91,6 +92,16 @@
     <NavigationProperty Name="vanue" Relationship="Online_Booking_SystemModel.FK_Additional_ch_config_vanue" FromRole="Additional_ch_config" ToRole="vanue" />
     <NavigationProperty Name="customer_booking_addl_ch" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_Additional_ch_config" FromRole="Additional_ch_config" ToRole="customer_booking_addl_ch" />
   </EntityType>
+  <EntityType Name="bank">
+    <Key>
+      <PropertyRef Name="bank_id" />
+    </Key>
+    <Property Name="bank_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bank_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Boolean" />
+  </EntityType>
   <EntityType Name="booking_schedule">
     <Key>
       <PropertyRef Name="schedule_id" />
@@ -164,6 +175,7 @@
     <Property Name="cus_booking_addl_ch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="customer_booking_id" Type="Int32" />
     <Property Name="additional_ch_id" Type="Int32" />
+    <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="Additional_ch_config" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_Additional_ch_config" FromRole="customer_booking_addl_ch" ToRole="Additional_ch_config" />
     <NavigationProperty Name="customer_booking" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_customer_booking" FromRole="customer_booking_addl_ch" ToRole="customer_booking" />
   </EntityType>

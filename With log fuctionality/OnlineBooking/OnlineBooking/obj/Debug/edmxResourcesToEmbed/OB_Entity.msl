@@ -12,6 +12,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="banks">
+      <EntityTypeMapping TypeName="Online_Booking_SystemModel.bank">
+        <MappingFragment StoreEntitySet="bank">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Account_no" ColumnName="Account_no" />
+          <ScalarProperty Name="Account_title" ColumnName="Account_title" />
+          <ScalarProperty Name="bank_name" ColumnName="bank_name" />
+          <ScalarProperty Name="bank_id" ColumnName="bank_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="booking_schedule">
       <EntityTypeMapping TypeName="Online_Booking_SystemModel.booking_schedule">
         <MappingFragment StoreEntitySet="booking_schedule">
@@ -72,6 +83,7 @@
     <EntitySetMapping Name="customer_booking_addl_ch">
       <EntityTypeMapping TypeName="Online_Booking_SystemModel.customer_booking_addl_ch">
         <MappingFragment StoreEntitySet="customer_booking_addl_ch">
+          <ScalarProperty Name="amount" ColumnName="amount" />
           <ScalarProperty Name="additional_ch_id" ColumnName="additional_ch_id" />
           <ScalarProperty Name="customer_booking_id" ColumnName="customer_booking_id" />
           <ScalarProperty Name="cus_booking_addl_ch_id" ColumnName="cus_booking_addl_ch_id" />

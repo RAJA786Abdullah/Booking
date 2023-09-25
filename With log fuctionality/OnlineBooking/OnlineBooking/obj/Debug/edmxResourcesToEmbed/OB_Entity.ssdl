@@ -10,6 +10,16 @@
     <Property Name="policy_id" Type="int" />
     <Property Name="vanue_id" Type="int" />
   </EntityType>
+  <EntityType Name="bank">
+    <Key>
+      <PropertyRef Name="bank_id" />
+    </Key>
+    <Property Name="bank_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bank_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account_no" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
   <EntityType Name="booking_schedule">
     <Key>
       <PropertyRef Name="schedule_id" />
@@ -70,6 +80,7 @@
     <Property Name="cus_booking_addl_ch_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="customer_booking_id" Type="int" />
     <Property Name="additional_ch_id" Type="int" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="directorate">
     <Key>
@@ -347,6 +358,7 @@
   </Association>
   <EntityContainer Name="Online_Booking_SystemModelStoreContainer">
     <EntitySet Name="Additional_ch_config" EntityType="Self.Additional_ch_config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bank" EntityType="Self.bank" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="booking_schedule" EntityType="Self.booking_schedule" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="booking_type" EntityType="Self.booking_type" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />

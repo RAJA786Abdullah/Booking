@@ -1,9 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Online_Booking_SystemModelStoreContainer" CdmEntityContainer="OB_entities">
+    <EntitySetMapping Name="Additional_ch_config">
+      <EntityTypeMapping TypeName="Online_Booking_SystemModel.Additional_ch_config">
+        <MappingFragment StoreEntitySet="Additional_ch_config">
+          <ScalarProperty Name="vanue_id" ColumnName="vanue_id" />
+          <ScalarProperty Name="policy_id" ColumnName="policy_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="charges_title" ColumnName="charges_title" />
+          <ScalarProperty Name="additional_ch_id" ColumnName="additional_ch_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="banks">
+      <EntityTypeMapping TypeName="Online_Booking_SystemModel.bank">
+        <MappingFragment StoreEntitySet="bank">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Account_no" ColumnName="Account_no" />
+          <ScalarProperty Name="Account_title" ColumnName="Account_title" />
+          <ScalarProperty Name="bank_name" ColumnName="bank_name" />
+          <ScalarProperty Name="bank_id" ColumnName="bank_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="booking_schedule">
       <EntityTypeMapping TypeName="Online_Booking_SystemModel.booking_schedule">
         <MappingFragment StoreEntitySet="booking_schedule">
+          <ScalarProperty Name="team_category_id" ColumnName="team_category_id" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="created_date" ColumnName="created_date" />
           <ScalarProperty Name="schedule_status" ColumnName="schedule_status" />
@@ -40,16 +63,30 @@
     <EntitySetMapping Name="customer_booking">
       <EntityTypeMapping TypeName="Online_Booking_SystemModel.customer_booking">
         <MappingFragment StoreEntitySet="customer_booking">
+          <ScalarProperty Name="transaction_date" ColumnName="transaction_date" />
+          <ScalarProperty Name="update_date" ColumnName="update_date" />
+          <ScalarProperty Name="update_by_id" ColumnName="update_by_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
           <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="booking_date" ColumnName="booking_date" />
           <ScalarProperty Name="total_amount" ColumnName="total_amount" />
           <ScalarProperty Name="is_confirmed" ColumnName="is_confirmed" />
           <ScalarProperty Name="is_reservation" ColumnName="is_reservation" />
           <ScalarProperty Name="is_paid" ColumnName="is_paid" />
           <ScalarProperty Name="customer_id" ColumnName="customer_id" />
-          <ScalarProperty Name="time_slot_id" ColumnName="time_slot_id" />
           <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
           <ScalarProperty Name="Booking_no" ColumnName="Booking_no" />
           <ScalarProperty Name="customer_booking_id" ColumnName="customer_booking_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer_booking_addl_ch">
+      <EntityTypeMapping TypeName="Online_Booking_SystemModel.customer_booking_addl_ch">
+        <MappingFragment StoreEntitySet="customer_booking_addl_ch">
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="additional_ch_id" ColumnName="additional_ch_id" />
+          <ScalarProperty Name="customer_booking_id" ColumnName="customer_booking_id" />
+          <ScalarProperty Name="cus_booking_addl_ch_id" ColumnName="cus_booking_addl_ch_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -59,6 +96,16 @@
           <ScalarProperty Name="dte_status" ColumnName="dte_status" />
           <ScalarProperty Name="dte_name" ColumnName="dte_name" />
           <ScalarProperty Name="dte_id" ColumnName="dte_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="holidays">
+      <EntityTypeMapping TypeName="Online_Booking_SystemModel.holiday">
+        <MappingFragment StoreEntitySet="holiday">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="holiday_id" ColumnName="holiday_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -75,6 +122,9 @@
     <EntitySetMapping Name="shifts">
       <EntityTypeMapping TypeName="Online_Booking_SystemModel.shift">
         <MappingFragment StoreEntitySet="shift">
+          <ScalarProperty Name="season" ColumnName="season" />
+          <ScalarProperty Name="time_to" ColumnName="time_to" />
+          <ScalarProperty Name="time_from" ColumnName="time_from" />
           <ScalarProperty Name="shift_status" ColumnName="shift_status" />
           <ScalarProperty Name="shift_title" ColumnName="shift_title" />
           <ScalarProperty Name="shift_id" ColumnName="shift_id" />
@@ -92,18 +142,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="time_slot">
-      <EntityTypeMapping TypeName="Online_Booking_SystemModel.time_slot">
-        <MappingFragment StoreEntitySet="time_slot">
-          <ScalarProperty Name="user_id" ColumnName="user_id" />
-          <ScalarProperty Name="created_date" ColumnName="created_date" />
-          <ScalarProperty Name="vanue_id" ColumnName="vanue_id" />
-          <ScalarProperty Name="shift_id" ColumnName="shift_id" />
-          <ScalarProperty Name="day_id" ColumnName="day_id" />
-          <ScalarProperty Name="time_slot_status" ColumnName="time_slot_status" />
-          <ScalarProperty Name="time_to" ColumnName="time_to" />
-          <ScalarProperty Name="time_from" ColumnName="time_from" />
-          <ScalarProperty Name="time_slot_id" ColumnName="time_slot_id" />
+    <EntitySetMapping Name="team_category">
+      <EntityTypeMapping TypeName="Online_Booking_SystemModel.team_category">
+        <MappingFragment StoreEntitySet="team_category">
+          <ScalarProperty Name="team_status" ColumnName="team_status" />
+          <ScalarProperty Name="team_title" ColumnName="team_title" />
+          <ScalarProperty Name="team_category_id" ColumnName="team_category_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -111,7 +155,7 @@
       <EntityTypeMapping TypeName="Online_Booking_SystemModel.user">
         <MappingFragment StoreEntitySet="user">
           <ScalarProperty Name="DHA_No" ColumnName="DHA_No" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="created_date" ColumnName="created_date" />
           <ScalarProperty Name="dte_id" ColumnName="dte_id" />

@@ -78,7 +78,7 @@ namespace OnlineBooking.pages
                         db.SaveChanges();
                         dbtasec.Commit();
                         Session["CBID"] = tbl1.customer_booking_id.ToString();
-
+                        //decimal addtional_amount = 0;
                         foreach (GridViewRow row in grd_additional_ch.Rows)
                         {
                             if (row.RowType == DataControlRowType.DataRow)
@@ -87,13 +87,18 @@ namespace OnlineBooking.pages
                                 if (chkSelect.Checked)
                                 {
                                     // Get the data key value (additional_ch_id)
-                                    int additional_ch_id = (int)grd_additional_ch.DataKeys[row.RowIndex].Value;
+                                    int additional_ch_id = (int)grd_additional_ch.DataKeys[row.RowIndex]["additional_ch_id"];
+                                   decimal amount = (decimal)grd_additional_ch.DataKeys[row.RowIndex]["amount"];
+
+                                    //addtional_amount = addtional_amount + amount;
+
 
                                     // Insert a record into the database table
                                     customer_booking_addl_ch tbl3 = new customer_booking_addl_ch()
                                     {
                                         customer_booking_id = tbl1.customer_booking_id,
-                                        additional_ch_id = additional_ch_id
+                                        additional_ch_id = additional_ch_id,
+                                        amount= amount
                                     };
                                     db.customer_booking_addl_ch.Add(tbl3);
                                 }
@@ -102,7 +107,15 @@ namespace OnlineBooking.pages
 
                         // Save changes to the database
                         db.SaveChanges();
-
+                        //if (addtional_amount>0)
+                        //{
+                        //    var dta3 = (from i in db.customer_booking where i.customer_booking_id == tbl1.customer_booking_id select i).FirstOrDefault();
+                        //    if (dta3!=null)
+                        //    {
+                        //        dta3.total_amount = dta3.total_amount + addtional_amount;
+                        //        db.SaveChanges();
+                        //    }
+                        //}
 
                         FRESH();
                         string errorMessage = "Voucher generated successfully, please pay it to confirm your booking!";

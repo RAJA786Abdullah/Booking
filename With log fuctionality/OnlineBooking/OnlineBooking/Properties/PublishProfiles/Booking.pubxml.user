@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\inetpub\wwwroot\booking</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\DHA Project\Online Booking\updated 25-9-23\With log fuctionality\OnlineBooking\OnlineBooking\obj\Release\publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="assets/Client_assets/img/1.jpg">
@@ -211,7 +211,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/07/2019 23:12:36</publishTime>
     </File>
     <File Include="assets/css/style.css">
-      <publishTime>08/02/2023 11:45:34</publishTime>
+      <publishTime>09/13/2023 16:39:37</publishTime>
     </File>
     <File Include="assets/css/style.css.map">
       <publishTime>09/27/2019 15:15:30</publishTime>
@@ -226,10 +226,304 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2023 10:16:59</publishTime>
     </File>
     <File Include="assets/css/styleGPT.css">
-      <publishTime>09/07/2023 09:39:04</publishTime>
+      <publishTime>09/13/2023 16:48:19</publishTime>
     </File>
     <File Include="assets/css/styleregi_login.css">
-      <publishTime>09/07/2023 15:14:32</publishTime>
+      <publishTime>09/09/2023 15:51:45</publishTime>
+    </File>
+    <File Include="assets/images/1.png">
+      <publishTime>07/22/2017 12:11:46</publishTime>
+    </File>
+    <File Include="assets/images/404.jpg">
+      <publishTime>06/05/2019 15:38:06</publishTime>
+    </File>
+    <File Include="assets/images/500.jpg">
+      <publishTime>06/05/2019 15:38:32</publishTime>
+    </File>
+    <File Include="assets/images/acount-page.jpg">
+      <publishTime>06/12/2019 17:13:04</publishTime>
+    </File>
+    <File Include="assets/images/album/sm-img-2.jpg">
+      <publishTime>06/12/2019 16:16:10</publishTime>
+    </File>
+    <File Include="assets/images/album/sm-img-5.jpg">
+      <publishTime>06/12/2019 16:16:16</publishTime>
+    </File>
+    <File Include="assets/images/background_login.jpg">
+      <publishTime>09/12/2023 09:55:15</publishTime>
+    </File>
+    <File Include="assets/images/bell.png">
+      <publishTime>03/14/2019 17:23:44</publishTime>
+    </File>
+    <File Include="assets/images/close.png">
+      <publishTime>04/30/2019 17:36:04</publishTime>
+    </File>
+    <File Include="assets/images/coins/btc.png">
+      <publishTime>02/21/2018 09:55:56</publishTime>
+    </File>
+    <File Include="assets/images/coins/dash.png">
+      <publishTime>02/21/2018 09:56:24</publishTime>
+    </File>
+    <File Include="assets/images/coins/dollar.png">
+      <publishTime>02/24/2018 13:00:30</publishTime>
+    </File>
+    <File Include="assets/images/coins/eth.png">
+      <publishTime>02/21/2018 09:56:46</publishTime>
+    </File>
+    <File Include="assets/images/coins/lite.png">
+      <publishTime>02/21/2018 09:57:02</publishTime>
+    </File>
+    <File Include="assets/images/coins/mon.png">
+      <publishTime>05/15/2019 10:22:56</publishTime>
+    </File>
+    <File Include="assets/images/coins/qub.png">
+      <publishTime>05/15/2019 10:25:50</publishTime>
+    </File>
+    <File Include="assets/images/DHA_Logo.jfif">
+      <publishTime>09/12/2023 09:54:19</publishTime>
+    </File>
+    <File Include="assets/images/favicon.ico">
+      <publishTime>06/15/2019 15:14:26</publishTime>
+    </File>
+    <File Include="assets/images/flags/french_flag.jpg">
+      <publishTime>07/05/2017 10:10:26</publishTime>
+    </File>
+    <File Include="assets/images/flags/germany_flag.jpg">
+      <publishTime>07/05/2017 10:08:46</publishTime>
+    </File>
+    <File Include="assets/images/flags/italy_flag.jpg">
+      <publishTime>07/05/2017 10:10:02</publishTime>
+    </File>
+    <File Include="assets/images/flags/russia_flag.jpg">
+      <publishTime>07/05/2017 10:11:50</publishTime>
+    </File>
+    <File Include="assets/images/flags/spain_flag.jpg">
+      <publishTime>07/05/2017 10:11:06</publishTime>
+    </File>
+    <File Include="assets/images/flags/us_flag.jpg">
+      <publishTime>07/05/2017 10:07:00</publishTime>
+    </File>
+    <File Include="assets/images/FormBookingBg.jpg">
+      <publishTime>09/13/2023 11:08:19</publishTime>
+    </File>
+    <File Include="assets/images/logo-dark.png">
+      <publishTime>06/08/2019 17:26:34</publishTime>
+    </File>
+    <File Include="assets/images/logo-sm.png">
+      <publishTime>01/27/2021 22:14:14</publishTime>
+    </File>
+    <File Include="assets/images/logo.png">
+      <publishTime>04/08/2019 13:51:18</publishTime>
+    </File>
+    <File Include="assets/images/open.png">
+      <publishTime>04/30/2019 17:35:50</publishTime>
+    </File>
+    <File Include="assets/images/pattern.png">
+      <publishTime>03/14/2019 17:24:14</publishTime>
+    </File>
+    <File Include="assets/images/pattern2.png">
+      <publishTime>05/08/2019 16:07:26</publishTime>
+    </File>
+    <File Include="assets/images/plus.png">
+      <publishTime>12/09/2017 14:59:12</publishTime>
+    </File>
+    <File Include="assets/images/products/1.jpg">
+      <publishTime>06/12/2019 16:20:20</publishTime>
+    </File>
+    <File Include="assets/images/products/1.png">
+      <publishTime>06/12/2019 16:22:26</publishTime>
+    </File>
+    <File Include="assets/images/products/2.jpg">
+      <publishTime>06/12/2019 16:20:26</publishTime>
+    </File>
+    <File Include="assets/images/products/2.png">
+      <publishTime>06/12/2019 16:22:26</publishTime>
+    </File>
+    <File Include="assets/images/products/3.jpg">
+      <publishTime>06/12/2019 16:20:32</publishTime>
+    </File>
+    <File Include="assets/images/products/3.png">
+      <publishTime>06/12/2019 16:22:26</publishTime>
+    </File>
+    <File Include="assets/images/products/4.jpg">
+      <publishTime>06/12/2019 16:20:38</publishTime>
+    </File>
+    <File Include="assets/images/products/4.png">
+      <publishTime>06/12/2019 16:22:26</publishTime>
+    </File>
+    <File Include="assets/images/products/5.png">
+      <publishTime>06/12/2019 16:22:26</publishTime>
+    </File>
+    <File Include="assets/images/products/bg-cart.png">
+      <publishTime>03/14/2019 17:07:36</publishTime>
+    </File>
+    <File Include="assets/images/products/img-1.png">
+      <publishTime>06/12/2019 16:22:26</publishTime>
+    </File>
+    <File Include="assets/images/products/img-2.png">
+      <publishTime>06/12/2019 16:22:32</publishTime>
+    </File>
+    <File Include="assets/images/products/img-3.png">
+      <publishTime>06/12/2019 16:23:22</publishTime>
+    </File>
+    <File Include="assets/images/products/img-4.png">
+      <publishTime>06/12/2019 16:23:28</publishTime>
+    </File>
+    <File Include="assets/images/products/img-5.png">
+      <publishTime>06/12/2019 16:23:32</publishTime>
+    </File>
+    <File Include="assets/images/products/img-6.png">
+      <publishTime>06/12/2019 16:23:36</publishTime>
+    </File>
+    <File Include="assets/images/products/img-7.png">
+      <publishTime>06/12/2019 16:23:40</publishTime>
+    </File>
+    <File Include="assets/images/products/offer.jpg">
+      <publishTime>06/12/2019 16:27:44</publishTime>
+    </File>
+    <File Include="assets/images/signature.png">
+      <publishTime>03/14/2019 17:24:20</publishTime>
+    </File>
+    <File Include="assets/images/small/ex-card.jpg">
+      <publishTime>06/10/2019 11:00:08</publishTime>
+    </File>
+    <File Include="assets/images/small/img-1.jpg">
+      <publishTime>06/12/2019 16:34:50</publishTime>
+    </File>
+    <File Include="assets/images/small/img-2.jpg">
+      <publishTime>06/12/2019 16:34:56</publishTime>
+    </File>
+    <File Include="assets/images/small/img-3.jpg">
+      <publishTime>06/12/2019 16:35:02</publishTime>
+    </File>
+    <File Include="assets/images/small/img-4.jpg">
+      <publishTime>06/12/2019 16:35:06</publishTime>
+    </File>
+    <File Include="assets/images/small/img-5.jpg">
+      <publishTime>06/12/2019 16:35:12</publishTime>
+    </File>
+    <File Include="assets/images/small/img-6.jpg">
+      <publishTime>06/12/2019 16:35:16</publishTime>
+    </File>
+    <File Include="assets/images/small/img-7.jpg">
+      <publishTime>06/12/2019 16:35:20</publishTime>
+    </File>
+    <File Include="assets/images/small/news-1.jpg">
+      <publishTime>06/12/2019 16:35:26</publishTime>
+    </File>
+    <File Include="assets/images/small/news-2.jpg">
+      <publishTime>06/12/2019 16:35:32</publishTime>
+    </File>
+    <File Include="assets/images/small/news-3.jpg">
+      <publishTime>06/12/2019 16:35:38</publishTime>
+    </File>
+    <File Include="assets/images/small/sm-1.jpg">
+      <publishTime>06/12/2019 16:33:10</publishTime>
+    </File>
+    <File Include="assets/images/small/sm-2.jpg">
+      <publishTime>06/12/2019 16:33:20</publishTime>
+    </File>
+    <File Include="assets/images/small/sm-3.jpg">
+      <publishTime>06/12/2019 16:33:26</publishTime>
+    </File>
+    <File Include="assets/images/small/user-pro.jpg">
+      <publishTime>06/12/2019 16:36:44</publishTime>
+    </File>
+    <File Include="assets/images/users/user-1.jpg">
+      <publishTime>06/12/2019 16:31:06</publishTime>
+    </File>
+    <File Include="assets/images/users/user-10.jpg">
+      <publishTime>06/12/2019 16:31:36</publishTime>
+    </File>
+    <File Include="assets/images/users/user-2.jpg">
+      <publishTime>06/12/2019 16:30:54</publishTime>
+    </File>
+    <File Include="assets/images/users/user-3.jpg">
+      <publishTime>06/12/2019 16:31:02</publishTime>
+    </File>
+    <File Include="assets/images/users/user-4.jpg">
+      <publishTime>08/02/2023 11:43:12</publishTime>
+    </File>
+    <File Include="assets/images/users/user-5.jpg">
+      <publishTime>06/12/2019 16:31:12</publishTime>
+    </File>
+    <File Include="assets/images/users/user-6.jpg">
+      <publishTime>06/12/2019 16:31:16</publishTime>
+    </File>
+    <File Include="assets/images/users/user-7.jpg">
+      <publishTime>06/12/2019 16:31:22</publishTime>
+    </File>
+    <File Include="assets/images/users/user-8.jpg">
+      <publishTime>06/12/2019 16:31:26</publishTime>
+    </File>
+    <File Include="assets/images/users/user-9.jpg">
+      <publishTime>06/12/2019 16:31:32</publishTime>
+    </File>
+    <File Include="assets/images/widgets/calendar.svg">
+      <publishTime>06/11/2019 10:38:42</publishTime>
+    </File>
+    <File Include="assets/images/widgets/code.svg">
+      <publishTime>09/25/2018 15:06:44</publishTime>
+    </File>
+    <File Include="assets/images/widgets/education.svg">
+      <publishTime>06/11/2019 15:52:10</publishTime>
+    </File>
+    <File Include="assets/images/widgets/login.svg">
+      <publishTime>06/04/2019 18:31:04</publishTime>
+    </File>
+    <File Include="assets/images/widgets/modal1.png">
+      <publishTime>06/05/2019 17:26:44</publishTime>
+    </File>
+    <File Include="assets/images/widgets/modal2.png">
+      <publishTime>06/05/2019 17:27:34</publishTime>
+    </File>
+    <File Include="assets/images/widgets/modal3.png">
+      <publishTime>06/10/2019 11:17:30</publishTime>
+    </File>
+    <File Include="assets/images/widgets/modal4.png">
+      <publishTime>06/05/2019 17:28:56</publishTime>
+    </File>
+    <File Include="assets/images/widgets/notify.svg">
+      <publishTime>05/17/2019 11:16:46</publishTime>
+    </File>
+    <File Include="assets/images/widgets/opp-1.png">
+      <publishTime>06/12/2019 16:40:42</publishTime>
+    </File>
+    <File Include="assets/images/widgets/opp-2.png">
+      <publishTime>06/12/2019 16:40:48</publishTime>
+    </File>
+    <File Include="assets/images/widgets/opp-3.png">
+      <publishTime>06/12/2019 16:40:52</publishTime>
+    </File>
+    <File Include="assets/images/widgets/p-1.svg">
+      <publishTime>06/11/2019 11:18:04</publishTime>
+    </File>
+    <File Include="assets/images/widgets/p-2.svg">
+      <publishTime>06/11/2019 11:29:10</publishTime>
+    </File>
+    <File Include="assets/images/widgets/p-3.svg">
+      <publishTime>05/24/2019 09:30:56</publishTime>
+    </File>
+    <File Include="assets/images/widgets/p-4.svg">
+      <publishTime>06/11/2019 11:19:52</publishTime>
+    </File>
+    <File Include="assets/images/widgets/p-5.svg">
+      <publishTime>06/11/2019 11:26:36</publishTime>
+    </File>
+    <File Include="assets/images/widgets/p-6.svg">
+      <publishTime>05/24/2019 10:38:02</publishTime>
+    </File>
+    <File Include="assets/images/widgets/project1.jpg">
+      <publishTime>06/12/2019 16:38:28</publishTime>
+    </File>
+    <File Include="assets/images/widgets/project2.jpg">
+      <publishTime>06/12/2019 16:38:32</publishTime>
+    </File>
+    <File Include="assets/images/widgets/project3.jpg">
+      <publishTime>06/12/2019 16:38:38</publishTime>
+    </File>
+    <File Include="assets/images/widgets/project4.jpg">
+      <publishTime>06/12/2019 16:38:42</publishTime>
     </File>
     <File Include="assets/img1.jpg">
       <publishTime>09/07/2023 11:24:56</publishTime>
@@ -2694,6 +2988,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="assets/scss/_waves.scss">
       <publishTime>08/02/2018 16:41:34</publishTime>
     </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>09/20/2023 10:20:03</publishTime>
+    </File>
+    <File Include="bin/BCrypt.Net-Next.dll">
+      <publishTime>09/20/2023 09:22:44</publishTime>
+    </File>
     <File Include="bin/de/Microsoft.SqlServer.Types.resources.dll">
       <publishTime>02/21/2014 05:26:06</publishTime>
     </File>
@@ -2737,7 +3037,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2014 05:28:46</publishTime>
     </File>
     <File Include="bin/OnlineBooking.dll">
-      <publishTime>09/08/2023 11:58:14</publishTime>
+      <publishTime>09/25/2023 10:13:27</publishTime>
     </File>
     <File Include="bin/pt/Microsoft.SqlServer.Types.resources.dll">
       <publishTime>02/21/2014 05:25:24</publishTime>
@@ -2781,6 +3081,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/ru/Microsoft.SqlServer.Types.resources.dll">
       <publishTime>02/21/2014 05:25:46</publishTime>
     </File>
+    <File Include="bin/Serilog.dll">
+      <publishTime>09/20/2023 11:45:47</publishTime>
+    </File>
     <File Include="bin/zh-Hans/Microsoft.SqlServer.Types.resources.dll">
       <publishTime>02/21/2014 05:27:58</publishTime>
     </File>
@@ -2788,19 +3091,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2014 05:28:10</publishTime>
     </File>
     <File Include="Bind_Data_DS.xsc">
-      <publishTime>09/07/2023 11:34:22</publishTime>
+      <publishTime>09/24/2023 17:35:23</publishTime>
     </File>
     <File Include="Bind_Data_DS.xss">
-      <publishTime>09/07/2023 11:34:22</publishTime>
+      <publishTime>09/24/2023 17:35:23</publishTime>
     </File>
     <File Include="frm_login.aspx">
       <publishTime>09/07/2023 16:11:10</publishTime>
     </File>
+    <File Include="Login.aspx">
+      <publishTime>09/23/2023 23:35:30</publishTime>
+    </File>
     <File Include="OB_Entity.edmx.diagram">
-      <publishTime>09/07/2023 11:56:10</publishTime>
+      <publishTime>09/24/2023 15:21:31</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>09/07/2023 14:33:46</publishTime>
+      <publishTime>09/20/2023 11:45:47</publishTime>
+    </File>
+    <File Include="pages/ALLBooking.aspx">
+      <publishTime>09/23/2023 17:30:58</publishTime>
+    </File>
+    <File Include="pages/BookingType.aspx">
+      <publishTime>09/23/2023 18:09:17</publishTime>
+    </File>
+    <File Include="pages/ConfirmBooking.aspx">
+      <publishTime>09/23/2023 18:07:13</publishTime>
     </File>
     <File Include="pages/frm_booking.aspx">
       <publishTime>09/08/2023 11:25:53</publishTime>
@@ -2812,37 +3127,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/07/2023 16:11:10</publishTime>
     </File>
     <File Include="pages/frm_paid.aspx">
-      <publishTime>09/04/2023 15:53:39</publishTime>
+      <publishTime>09/23/2023 22:52:15</publishTime>
     </File>
     <File Include="pages/frm_paidmark.aspx">
       <publishTime>09/08/2023 11:50:50</publishTime>
     </File>
     <File Include="pages/frm_payschedule.aspx">
-      <publishTime>08/02/2023 16:59:16</publishTime>
+      <publishTime>09/21/2023 14:20:14</publishTime>
+    </File>
+    <File Include="pages/frm_pending_booking.aspx">
+      <publishTime>09/14/2023 17:31:47</publishTime>
     </File>
     <File Include="pages/frm_reciept.aspx">
       <publishTime>09/08/2023 11:50:46</publishTime>
     </File>
     <File Include="pages/frm_registration.aspx">
-      <publishTime>09/07/2023 15:29:19</publishTime>
+      <publishTime>09/23/2023 23:35:30</publishTime>
+    </File>
+    <File Include="pages/frm_shift_timing.aspx">
+      <publishTime>09/20/2023 16:04:33</publishTime>
+    </File>
+    <File Include="pages/frm_team_cat.aspx">
+      <publishTime>09/21/2023 15:44:14</publishTime>
     </File>
     <File Include="pages/frm_Time_slot.aspx">
       <publishTime>08/31/2023 12:42:00</publishTime>
     </File>
     <File Include="pages/frm_venue.aspx">
-      <publishTime>09/01/2023 16:14:29</publishTime>
+      <publishTime>09/21/2023 14:17:35</publishTime>
     </File>
     <File Include="pages/frm_voucher.aspx">
-      <publishTime>09/08/2023 11:44:57</publishTime>
+      <publishTime>09/24/2023 16:41:38</publishTime>
     </File>
     <File Include="pages/frm_week_day.aspx">
-      <publishTime>08/04/2023 16:11:12</publishTime>
+      <publishTime>09/19/2023 15:02:59</publishTime>
     </File>
     <File Include="pages/Home.Master">
-      <publishTime>09/08/2023 11:47:36</publishTime>
+      <publishTime>09/23/2023 23:35:30</publishTime>
     </File>
     <File Include="pages/Index.aspx">
-      <publishTime>09/08/2023 09:49:22</publishTime>
+      <publishTime>09/08/2023 15:19:53</publishTime>
     </File>
     <File Include="pages/Main_pages/frm_booking.aspx">
       <publishTime>09/07/2023 09:40:55</publishTime>
@@ -2852,6 +3176,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="pages/Main_pages/frm_paidmark.aspx">
       <publishTime>09/01/2023 16:34:47</publishTime>
+    </File>
+    <File Include="pages/OnlineBooking.aspx">
+      <publishTime>09/24/2023 14:49:31</publishTime>
     </File>
     <File Include="pages/shift_type.aspx">
       <publishTime>08/02/2023 15:56:42</publishTime>
@@ -2863,7 +3190,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/01/2023 12:52:17</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/08/2023 09:58:45</publishTime>
+      <publishTime>09/25/2023 10:13:27</publishTime>
     </File>
   </ItemGroup>
 </Project>

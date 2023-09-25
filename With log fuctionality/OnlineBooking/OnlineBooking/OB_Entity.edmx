@@ -15,6 +15,16 @@
           <Property Name="policy_id" Type="int" />
           <Property Name="vanue_id" Type="int" />
         </EntityType>
+        <EntityType Name="bank">
+          <Key>
+            <PropertyRef Name="bank_id" />
+          </Key>
+          <Property Name="bank_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bank_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Account_title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Account_no" Type="nvarchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
         <EntityType Name="booking_schedule">
           <Key>
             <PropertyRef Name="schedule_id" />
@@ -75,6 +85,7 @@
           <Property Name="cus_booking_addl_ch_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="customer_booking_id" Type="int" />
           <Property Name="additional_ch_id" Type="int" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="directorate">
           <Key>
@@ -352,6 +363,7 @@
         </Association>
         <EntityContainer Name="Online_Booking_SystemModelStoreContainer">
           <EntitySet Name="Additional_ch_config" EntityType="Self.Additional_ch_config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="bank" EntityType="Self.bank" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="booking_schedule" EntityType="Self.booking_schedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="booking_type" EntityType="Self.booking_type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
@@ -434,6 +446,7 @@
       <Schema Namespace="Online_Booking_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="OB_entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Additional_ch_config" EntityType="Online_Booking_SystemModel.Additional_ch_config" />
+          <EntitySet Name="banks" EntityType="Online_Booking_SystemModel.bank" />
           <EntitySet Name="booking_schedule" EntityType="Online_Booking_SystemModel.booking_schedule" />
           <EntitySet Name="booking_type" EntityType="Online_Booking_SystemModel.booking_type" />
           <EntitySet Name="customers" EntityType="Online_Booking_SystemModel.customer" />
@@ -523,6 +536,16 @@
           <NavigationProperty Name="vanue" Relationship="Online_Booking_SystemModel.FK_Additional_ch_config_vanue" FromRole="Additional_ch_config" ToRole="vanue" />
           <NavigationProperty Name="customer_booking_addl_ch" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_Additional_ch_config" FromRole="Additional_ch_config" ToRole="customer_booking_addl_ch" />
         </EntityType>
+        <EntityType Name="bank">
+          <Key>
+            <PropertyRef Name="bank_id" />
+          </Key>
+          <Property Name="bank_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bank_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Account_title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Account_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
         <EntityType Name="booking_schedule">
           <Key>
             <PropertyRef Name="schedule_id" />
@@ -596,6 +619,7 @@
           <Property Name="cus_booking_addl_ch_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="customer_booking_id" Type="Int32" />
           <Property Name="additional_ch_id" Type="Int32" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Additional_ch_config" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_Additional_ch_config" FromRole="customer_booking_addl_ch" ToRole="Additional_ch_config" />
           <NavigationProperty Name="customer_booking" Relationship="Online_Booking_SystemModel.FK_customer_booking_addl_ch_customer_booking" FromRole="customer_booking_addl_ch" ToRole="customer_booking" />
         </EntityType>
@@ -902,6 +926,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="banks">
+            <EntityTypeMapping TypeName="Online_Booking_SystemModel.bank">
+              <MappingFragment StoreEntitySet="bank">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Account_no" ColumnName="Account_no" />
+                <ScalarProperty Name="Account_title" ColumnName="Account_title" />
+                <ScalarProperty Name="bank_name" ColumnName="bank_name" />
+                <ScalarProperty Name="bank_id" ColumnName="bank_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="booking_schedule">
             <EntityTypeMapping TypeName="Online_Booking_SystemModel.booking_schedule">
               <MappingFragment StoreEntitySet="booking_schedule">
@@ -962,6 +997,7 @@
           <EntitySetMapping Name="customer_booking_addl_ch">
             <EntityTypeMapping TypeName="Online_Booking_SystemModel.customer_booking_addl_ch">
               <MappingFragment StoreEntitySet="customer_booking_addl_ch">
+                <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="additional_ch_id" ColumnName="additional_ch_id" />
                 <ScalarProperty Name="customer_booking_id" ColumnName="customer_booking_id" />
                 <ScalarProperty Name="cus_booking_addl_ch_id" ColumnName="cus_booking_addl_ch_id" />
