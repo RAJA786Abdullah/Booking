@@ -75,6 +75,7 @@
           <ScalarProperty Name="is_paid" ColumnName="is_paid" />
           <ScalarProperty Name="customer_id" ColumnName="customer_id" />
           <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+          <ScalarProperty Name="voucher_no" ColumnName="voucher_no" />
           <ScalarProperty Name="Booking_no" ColumnName="Booking_no" />
           <ScalarProperty Name="customer_booking_id" ColumnName="customer_booking_id" />
         </MappingFragment>
@@ -128,17 +129,6 @@
           <ScalarProperty Name="shift_status" ColumnName="shift_status" />
           <ScalarProperty Name="shift_title" ColumnName="shift_title" />
           <ScalarProperty Name="shift_id" ColumnName="shift_id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="Online_Booking_SystemModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

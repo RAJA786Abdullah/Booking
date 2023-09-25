@@ -36,7 +36,6 @@ namespace OnlineBooking
         public virtual DbSet<holiday> holidays { get; set; }
         public virtual DbSet<policy> policies { get; set; }
         public virtual DbSet<shift> shifts { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<team_category> team_category { get; set; }
         public virtual DbSet<user> users { get; set; }
         public virtual DbSet<user_role> user_role { get; set; }

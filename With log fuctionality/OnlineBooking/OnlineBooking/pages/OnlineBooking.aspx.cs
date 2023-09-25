@@ -43,86 +43,102 @@ namespace OnlineBooking.pages
                 {
                     try
                     {
-
-                        customer tbl = new customer();
-                        tbl.name = txt_customerName.Text;
-                        tbl.cnic = txt_customerCnic.Text;
-                        tbl.mobile_no = txt_customerContactno.Text;
-                        tbl.created_date = DateTime.Now;
-                        db.customers.Add(tbl);
-                        db.SaveChanges();
-                        int customerID = tbl.customer_id;
-                        int rndNo = 0;
-
-
-                        var mx = (from i in db.customer_booking orderby i.customer_booking_id descending select i).FirstOrDefault();
-                        if (mx != null)
-                        { rndNo = mx.Booking_no + 1; }
+                        int id = Convert.ToInt32(Session["SHD_ID"]);
+                        DateTime parsedDate = DateTime.ParseExact(dtp_booking_date.SelectedDate.ToString("yyyy-MM-dd"), "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                        var chk = (from i in db.customer_booking
+                                   join ii in db.booking_schedule on i.schedule_id equals ii.schedule_id
+                                   where ii.shift_id == id && i.booking_date == parsedDate
+                                   select i).FirstOrDefault();
+                        if (chk != null)
+                        {
+                            string msg = "This time slot is already booked!";
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowErrorModal", $"openModal('{msg}')", true);
+                            Session["SHD_ID"] = null;
+                            return;
+                        }
                         else
                         {
-                            rndNo = 10001;
-                        }
-                        //customer booking 
-                        customer_booking tbl1 = new customer_booking();
-                        tbl1.customer_id = customerID;
-                        tbl1.Booking_no = rndNo;
-                        tbl1.schedule_id = Convert.ToInt32(Session["SHD_ID"]);
-                        tbl1.is_reservation = true;
-                        tbl1.is_paid = false;
-                        tbl1.total_amount = Convert.ToDecimal(Session["CHRG_AMONT"]);
-                        tbl1.is_confirmed = false;
-                        tbl1.user_id = Convert.ToInt32(Session["User_ID"]);
-                        tbl1.created_date = DateTime.Now;
-                        tbl1.booking_date = Convert.ToDateTime( Session["date"]);
-                        db.customer_booking.Add(tbl1);
-                        db.SaveChanges();
-                        dbtasec.Commit();
-                        Session["CBID"] = tbl1.customer_booking_id.ToString();
-                        //decimal addtional_amount = 0;
-                        foreach (GridViewRow row in grd_additional_ch.Rows)
-                        {
-                            if (row.RowType == DataControlRowType.DataRow)
+                            customer tbl = new customer();
+                            tbl.name = txt_customerName.Text;
+                            tbl.cnic = txt_customerCnic.Text;
+                            tbl.mobile_no = txt_customerContactno.Text;
+                            tbl.created_date = DateTime.Now;
+                            db.customers.Add(tbl);
+                            db.SaveChanges();
+                            int customerID = tbl.customer_id;
+                            int rndNo = 0;
+                            var mx = (from i in db.customer_booking orderby i.customer_booking_id descending select i).FirstOrDefault();
+                            if (mx != null)
+                            { rndNo = mx.Booking_no + 1; }
+                            else
                             {
-                                CheckBox chkSelect = (CheckBox)row.FindControl("chk_additional"); // Replace with the actual CheckBox ID
-                                if (chkSelect.Checked)
+                                rndNo = 10001;
+                            }
+                            //customer booking 
+                            DateTime dt = Convert.ToDateTime(Session["date"]);
+                            string result = dt.ToString("ddMM");
+                            string voucher_no = "VBN" + result + rndNo;
+                            customer_booking tbl1 = new customer_booking();
+                            tbl1.customer_id = customerID;
+                            tbl1.Booking_no = rndNo;
+                            tbl1.voucher_no = voucher_no;
+                            tbl1.schedule_id = Convert.ToInt32(Session["SHD_ID"]);
+                            tbl1.is_reservation = true;
+                            tbl1.is_paid = false;
+                            tbl1.total_amount = Convert.ToDecimal(Session["CHRG_AMONT"]);
+                            tbl1.is_confirmed = false;
+                            tbl1.user_id = Convert.ToInt32(Session["User_ID"]);
+                            tbl1.created_date = DateTime.Now;
+                            tbl1.booking_date = Convert.ToDateTime(Session["date"]);
+                            db.customer_booking.Add(tbl1);
+                            db.SaveChanges();
+                            dbtasec.Commit();
+                            Session["CBID"] = tbl1.customer_booking_id.ToString();
+                            //decimal addtional_amount = 0;
+                            foreach (GridViewRow row in grd_additional_ch.Rows)
+                            {
+                                if (row.RowType == DataControlRowType.DataRow)
                                 {
-                                    // Get the data key value (additional_ch_id)
-                                    int additional_ch_id = (int)grd_additional_ch.DataKeys[row.RowIndex]["additional_ch_id"];
-                                   decimal amount = (decimal)grd_additional_ch.DataKeys[row.RowIndex]["amount"];
-
-                                    //addtional_amount = addtional_amount + amount;
-
-
-                                    // Insert a record into the database table
-                                    customer_booking_addl_ch tbl3 = new customer_booking_addl_ch()
+                                    CheckBox chkSelect = (CheckBox)row.FindControl("chk_additional"); // Replace with the actual CheckBox ID
+                                    if (chkSelect.Checked)
                                     {
-                                        customer_booking_id = tbl1.customer_booking_id,
-                                        additional_ch_id = additional_ch_id,
-                                        amount= amount
-                                    };
-                                    db.customer_booking_addl_ch.Add(tbl3);
+                                        // Get the data key value (additional_ch_id)
+                                        int additional_ch_id = (int)grd_additional_ch.DataKeys[row.RowIndex]["additional_ch_id"];
+                                        decimal amount = (decimal)grd_additional_ch.DataKeys[row.RowIndex]["amount"];
+
+                                        //addtional_amount = addtional_amount + amount;
+
+
+                                        // Insert a record into the database table
+                                        customer_booking_addl_ch tbl3 = new customer_booking_addl_ch()
+                                        {
+                                            customer_booking_id = tbl1.customer_booking_id,
+                                            additional_ch_id = additional_ch_id,
+                                            amount = amount
+                                        };
+                                        db.customer_booking_addl_ch.Add(tbl3);
+                                    }
                                 }
                             }
+
+                            // Save changes to the database
+                            db.SaveChanges();
+                            //if (addtional_amount>0)
+                            //{
+                            //    var dta3 = (from i in db.customer_booking where i.customer_booking_id == tbl1.customer_booking_id select i).FirstOrDefault();
+                            //    if (dta3!=null)
+                            //    {
+                            //        dta3.total_amount = dta3.total_amount + addtional_amount;
+                            //        db.SaveChanges();
+                            //    }
+                            //}
+
+                            FRESH();
+                            string errorMessage = "Voucher generated successfully, please pay it to confirm your booking!";
+                            ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowErrorModal", $"alert('{errorMessage}'); window.location.href='/pages/frm_voucher.aspx';", true);
+
+                            // Response.Redirect("/pages/frm_voucher.aspx");
                         }
-
-                        // Save changes to the database
-                        db.SaveChanges();
-                        //if (addtional_amount>0)
-                        //{
-                        //    var dta3 = (from i in db.customer_booking where i.customer_booking_id == tbl1.customer_booking_id select i).FirstOrDefault();
-                        //    if (dta3!=null)
-                        //    {
-                        //        dta3.total_amount = dta3.total_amount + addtional_amount;
-                        //        db.SaveChanges();
-                        //    }
-                        //}
-
-                        FRESH();
-                        string errorMessage = "Voucher generated successfully, please pay it to confirm your booking!";
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "ShowErrorModal", $"alert('{errorMessage}'); window.location.href='/pages/frm_voucher.aspx';", true);
-
-                        // Response.Redirect("/pages/frm_voucher.aspx");
-
 
                     }
                     catch (Exception ex)
