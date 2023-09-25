@@ -11,7 +11,7 @@ namespace OnlineBooking.pages
 {
     public partial class BookingType : System.Web.UI.Page
     {
-        //form load page
+        //form load page testtt
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["User_ID"] == null)
