@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .grid-view-container {
-            width: 100%; /* Set your desired height here */
+            width: 1150px; /* Set your desired height here */
             overflow-y: auto; /* Enable vertical scrolling */
         }
     </style>

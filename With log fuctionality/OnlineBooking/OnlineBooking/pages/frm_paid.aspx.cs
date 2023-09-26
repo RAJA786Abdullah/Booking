@@ -30,8 +30,8 @@ namespace OnlineBooking.pages
                 OB_entities db = new OB_entities();
                 if (!string.IsNullOrEmpty(txt_vchrno.Value))
                 {
-                    int vchrNo = Convert.ToInt32(txt_vchrno.Value);
-                    var val = (from i in db.customer_booking where i.Booking_no == vchrNo select i).FirstOrDefault();
+                    string vchrNo = txt_vchrno.Value.ToString().Trim().ToUpper();
+                    var val = (from i in db.customer_booking where i.voucher_no == vchrNo select i).FirstOrDefault();
                     if (val != null)
                     {
                         Session["BOOKID"] = val.customer_booking_id.ToString();
@@ -39,7 +39,7 @@ namespace OnlineBooking.pages
                     }
                     else
                     {
-                        lbl_alert.Text = "Booking no not exist";
+                        lbl_alert.Text = "No record found against this voucher number!";
                         btn_alert.Visible = true;
                         lbl_alert.Visible = true;
                         popup.Visible = true;

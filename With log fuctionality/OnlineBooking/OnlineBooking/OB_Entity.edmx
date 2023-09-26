@@ -65,6 +65,7 @@
           </Key>
           <Property Name="customer_booking_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Booking_no" Type="int" Nullable="false" />
+          <Property Name="voucher_no" Type="nvarchar" MaxLength="50" />
           <Property Name="schedule_id" Type="int" Nullable="false" />
           <Property Name="customer_id" Type="int" Nullable="false" />
           <Property Name="is_paid" Type="bit" Nullable="false" />
@@ -123,16 +124,6 @@
           <Property Name="time_from" Type="nvarchar" MaxLength="50" />
           <Property Name="time_to" Type="nvarchar" MaxLength="50" />
           <Property Name="season" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="team_category">
           <Key>
@@ -373,7 +364,6 @@
           <EntitySet Name="holiday" EntityType="Self.holiday" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="policy" EntityType="Self.policy" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="shift" EntityType="Self.shift" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="team_category" EntityType="Self.team_category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user_role" EntityType="Self.user_role" Schema="dbo" store:Type="Tables" />
@@ -456,7 +446,6 @@
           <EntitySet Name="holidays" EntityType="Online_Booking_SystemModel.holiday" />
           <EntitySet Name="policies" EntityType="Online_Booking_SystemModel.policy" />
           <EntitySet Name="shifts" EntityType="Online_Booking_SystemModel.shift" />
-          <EntitySet Name="sysdiagrams" EntityType="Online_Booking_SystemModel.sysdiagram" />
           <EntitySet Name="team_category" EntityType="Online_Booking_SystemModel.team_category" />
           <EntitySet Name="users" EntityType="Online_Booking_SystemModel.user" />
           <EntitySet Name="user_role" EntityType="Online_Booking_SystemModel.user_role" />
@@ -595,6 +584,7 @@
           </Key>
           <Property Name="customer_booking_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Booking_no" Type="Int32" Nullable="false" />
+          <Property Name="voucher_no" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="schedule_id" Type="Int32" Nullable="false" />
           <Property Name="customer_id" Type="Int32" Nullable="false" />
           <Property Name="is_paid" Type="Boolean" Nullable="false" />
@@ -663,16 +653,6 @@
           <Property Name="time_to" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="season" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="booking_schedule" Relationship="Online_Booking_SystemModel.FK_booking_schedule_shift" FromRole="shift" ToRole="booking_schedule" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="team_category">
           <Key>
@@ -989,6 +969,7 @@
                 <ScalarProperty Name="is_paid" ColumnName="is_paid" />
                 <ScalarProperty Name="customer_id" ColumnName="customer_id" />
                 <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+                <ScalarProperty Name="voucher_no" ColumnName="voucher_no" />
                 <ScalarProperty Name="Booking_no" ColumnName="Booking_no" />
                 <ScalarProperty Name="customer_booking_id" ColumnName="customer_booking_id" />
               </MappingFragment>
@@ -1042,17 +1023,6 @@
                 <ScalarProperty Name="shift_status" ColumnName="shift_status" />
                 <ScalarProperty Name="shift_title" ColumnName="shift_title" />
                 <ScalarProperty Name="shift_id" ColumnName="shift_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="Online_Booking_SystemModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

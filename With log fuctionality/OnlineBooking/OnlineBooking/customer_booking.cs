@@ -22,6 +22,7 @@ namespace OnlineBooking
     
         public int customer_booking_id { get; set; }
         public int Booking_no { get; set; }
+        public string voucher_no { get; set; }
         public int schedule_id { get; set; }
         public int customer_id { get; set; }
         public bool is_paid { get; set; }

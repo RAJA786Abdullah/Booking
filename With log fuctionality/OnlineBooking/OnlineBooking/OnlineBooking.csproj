@@ -1336,9 +1336,6 @@
     <Compile Include="shift.cs">
       <DependentUpon>OB_Entity.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>OB_Entity.tt</DependentUpon>
-    </Compile>
     <Compile Include="team_category.cs">
       <DependentUpon>OB_Entity.tt</DependentUpon>
     </Compile>
